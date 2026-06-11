@@ -1,0 +1,173 @@
+/* =============================================
+   FinTrack - Responsive Styles
+   ============================================= */
+
+/* ---- Large Desktop (1400px+) ---- */
+@media (min-width: 1400px) {
+  .hero-title { font-size: 4.5rem; }
+  .section-title { font-size: 3.2rem; }
+}
+
+/* ---- Desktop (1200px - 1399px) ---- */
+@media (max-width: 1399px) {
+  .hero-floating-card.card-balance { left: -20px; }
+  .hero-floating-card.card-expense { right: -10px; }
+}
+
+/* ---- Laptop (992px - 1199px) ---- */
+@media (max-width: 1199px) {
+  .sidebar { width: 220px; }
+  .main-content { margin-left: 220px; }
+  .hero-floating-card { display: none; }
+}
+
+/* ---- Tablet (768px - 991px) ---- */
+@media (max-width: 991px) {
+  :root { --section-padding: 70px 0; }
+
+  /* Navbar */
+  .navbar-collapse {
+    background: rgba(15,23,42,.95);
+    backdrop-filter: blur(20px);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-top: 10px;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .navbar-nav .nav-link { padding: 10px 16px !important; }
+
+  /* Hero */
+  .hero-section { padding: 100px 0 60px; }
+  .hero-title   { font-size: 2.8rem; }
+  .hero-image-wrapper { margin-top: 40px; }
+  .hero-stats   { gap: 20px; }
+  .hero-stat .stat-value { font-size: 1.5rem; }
+
+  /* Dashboard Sidebar */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .main-content { margin-left: 0; }
+  .top-bar { padding: 14px 20px; }
+  .content-area { padding: 20px; }
+
+  /* Pricing */
+  .pricing-card.featured { transform: scale(1); }
+
+  /* Team */
+  .team-card { margin-bottom: 24px; }
+}
+
+/* ---- Mobile Large (576px - 767px) ---- */
+@media (max-width: 767px) {
+  :root { --section-padding: 56px 0; }
+
+  .hero-title   { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-stats   { gap: 16px; flex-wrap: wrap; }
+  .hero-stat-divider { display: none; }
+
+  .section-title    { font-size: 1.9rem; }
+  .section-subtitle { font-size: .95rem; }
+
+  .feature-card { padding: 24px 20px; }
+
+  .stat-card-value { font-size: 1.5rem; }
+
+  .hero-buttons { flex-direction: column; gap: 12px; }
+  .hero-buttons .btn-primary-custom,
+  .hero-buttons .btn-outline-custom { width: 100%; justify-content: center; }
+
+  .newsletter-form { flex-direction: column; }
+
+  .cta-title { font-size: 1.8rem; }
+
+  .content-area { padding: 16px; }
+  .chart-card   { margin-bottom: 20px; }
+
+  .top-bar-title { font-size: 1.1rem; }
+
+  .goal-card { padding: 20px; }
+  .form-card { padding: 20px; }
+}
+
+/* ---- Mobile Small (max 575px) ---- */
+@media (max-width: 575px) {
+  .hero-title { font-size: 1.9rem; }
+
+  .table-custom thead { display: none; }
+  .table-custom tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: .85rem;
+  }
+  .table-custom tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: .75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .table-custom tbody tr {
+    border: 1px solid var(--light-3);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .pricing-card { margin-bottom: 20px; }
+  .pricing-card.featured { transform: scale(1); }
+
+  .stat-card { padding: 18px; }
+  .stat-card-value { font-size: 1.4rem; }
+
+  .quick-actions-card { padding: 18px; }
+
+  .sidebar-link span { font-size: .85rem; }
+}
+
+/* ---- Animations & Interactions ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .feature-card,
+  .stat-card,
+  .testimonial-card,
+  .goal-card,
+  .team-card { will-change: transform; }
+}
+
+/* ---- Print Styles ---- */
+@media print {
+  .sidebar, .top-bar, .quick-actions-card { display: none !important; }
+  .main-content { margin-left: 0 !important; }
+  body { background: #fff; }
+}
+
+/* ---- Dark mode support ---- */
+@media (prefers-color-scheme: dark) {
+  /* Intentionally not overriding - design already has dark sections */
+}
+
+/* ---- High-DPI Displays ---- */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-image-wrapper img { image-rendering: -webkit-optimize-contrast; }
+}
+
+/* ---- Focus visible (Accessibility) ---- */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---- Touch devices ---- */
+@media (hover: none) {
+  .feature-card:hover { transform: none; }
+  .stat-card:hover    { transform: none; }
+  .btn-primary-custom:hover { transform: none; }
+}

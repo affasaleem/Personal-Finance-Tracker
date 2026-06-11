@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn About FinTrack - our mission to empower financial freedom, our story, and the team behind the platform." />
+  <title>About Us | FinTrack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">💰 FinTrack</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar" style="background:transparent">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon"><i class="bi bi-graph-up-arrow text-white"></i></div>
+      <span class="brand-name">Fin<span class="brand-accent">Track</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAbout"
+            aria-controls="navbarAbout" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarAbout">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="expenses.html">Expenses</a></li>
+        <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions d-flex align-items-center gap-2">
+      <a href="dashboard.html" class="btn-nav-dashboard" aria-label="View Dashboard">
+        <span class="dash-dot"></span>
+        <i class="bi bi-speedometer2"></i> Dashboard
+      </a>
+        <button class="btn-nav-login" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </button>
+        <button class="btn-nav-register ripple" data-bs-toggle="modal" data-bs-target="#registerModal">
+          <i class="bi bi-person-plus-fill"></i> Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="breadcrumb justify-content-center" style="background:transparent">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">About</li>
+          </ol>
+        </nav>
+        <div class="section-tag mx-auto mb-3" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8)">
+          <i class="bi bi-heart-fill"></i> Our Story
+        </div>
+        <h1 class="inner-hero-title mb-3">We Believe Everyone Deserves<br><span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Financial Freedom</span></h1>
+        <p class="inner-hero-subtitle mx-auto" style="max-width:600px">FinTrack was born from a simple idea: managing money shouldn't require a finance degree. We built a tool that makes personal finance accessible, beautiful, and even enjoyable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section style="padding:var(--section-padding)">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="section-tag"><i class="bi bi-book"></i> Our Journey</div>
+        <h2 class="section-title">From a Spreadsheet<br>to a Movement</h2>
+        <p style="color:var(--text-body);line-height:1.9;margin-bottom:1.2rem">
+          FinTrack started in 2021 when our founders — two software engineers drowning in student loans and credit card debt — realized there was no tool that made personal finance feel approachable.
+        </p>
+        <p style="color:var(--text-body);line-height:1.9;margin-bottom:1.5rem">
+          What began as a shared Google spreadsheet evolved into a full-featured platform used by over 10,000 people across 50+ countries. Our goal has always been the same: help real people make real financial progress.
+        </p>
+        <div class="row g-3">
+          <div class="col-6">
+            <div style="background:var(--light-2);border-radius:var(--radius-md);padding:20px;text-align:center">
+              <div style="font-size:2rem;font-weight:800;color:var(--primary)">2021</div>
+              <div style="font-size:.85rem;color:var(--text-muted)">Founded</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="background:var(--light-2);border-radius:var(--radius-md);padding:20px;text-align:center">
+              <div style="font-size:2rem;font-weight:800;color:var(--accent)">10K+</div>
+              <div style="font-size:.85rem;color:var(--text-muted)">Users Worldwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&auto=format&fit=crop&q=80"
+             alt="Our Team" class="img-fluid rounded-custom shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section style="padding:var(--section-padding);background:var(--gradient-dark)">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="section-tag mx-auto" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8)"><i class="bi bi-compass"></i> Mission & Vision</div>
+        <h2 class="mb-3" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff">What Drives Us Every Day</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="insight-card text-center">
+          <div class="insight-icon mx-auto" style="background:rgba(37,99,235,.2)"><i class="bi bi-eye-fill" style="color:var(--primary-light)"></i></div>
+          <h4 style="color:#fff;font-weight:700;margin-bottom:12px">Our Vision</h4>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.8">A world where every person, regardless of income level, has the tools and knowledge to achieve financial independence.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="insight-card text-center">
+          <div class="insight-icon mx-auto" style="background:rgba(16,185,129,.2)"><i class="bi bi-rocket-takeoff-fill" style="color:var(--accent-light)"></i></div>
+          <h4 style="color:#fff;font-weight:700;margin-bottom:12px">Our Mission</h4>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.8">To build the most intuitive, beautiful, and powerful personal finance platform that empowers users to make smarter money decisions.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="insight-card text-center">
+          <div class="insight-icon mx-auto" style="background:rgba(6,182,212,.2)"><i class="bi bi-shield-heart-fill" style="color:var(--secondary-light)"></i></div>
+          <h4 style="color:#fff;font-weight:700;margin-bottom:12px">Our Values</h4>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.8">Transparency, simplicity, security, and user-first design are the core values that guide every decision we make.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section style="padding:var(--section-padding);background:var(--light-2)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-star-fill"></i> Why FinTrack</div>
+      <h2 class="section-title">What Makes Us Different</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="feature-card d-flex gap-4 flex-row align-items-start" style="padding:24px">
+          <div class="feature-icon bg-blue-soft flex-shrink-0" style="width:50px;height:50px"><i class="bi bi-shield-lock-fill"></i></div>
+          <div>
+            <h5 class="feature-title mb-2">Bank-Level Security</h5>
+            <p class="feature-desc mb-0">256-bit SSL encryption and read-only access means your data is always safe and private.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-card d-flex gap-4 flex-row align-items-start" style="padding:24px">
+          <div class="feature-icon bg-green-soft flex-shrink-0" style="width:50px;height:50px"><i class="bi bi-lightning-fill"></i></div>
+          <div>
+            <h5 class="feature-title mb-2">Real-Time Updates</h5>
+            <p class="feature-desc mb-0">See your financial picture update instantly as you add transactions and adjust budgets.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="feature-card d-flex gap-4 flex-row align-items-start" style="padding:24px">
+          <div class="feature-icon bg-cyan-soft flex-shrink-0" style="width:50px;height:50px"><i class="bi bi-phone-fill"></i></div>
+          <div>
+            <h5 class="feature-title mb-2">Works Everywhere</h5>
+            <p class="feature-desc mb-0">Fully responsive across desktop, tablet, and mobile — your finances wherever you are.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-card d-flex gap-4 flex-row align-items-start" style="padding:24px">
+          <div class="feature-icon bg-yellow-soft flex-shrink-0" style="width:50px;height:50px"><i class="bi bi-graph-up-arrow"></i></div>
+          <div>
+            <h5 class="feature-title mb-2">Smart Insights</h5>
+            <p class="feature-desc mb-0">AI-powered analysis surfaces actionable insights to help you optimize your finances automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="padding:var(--section-padding)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-people-fill"></i> Our Team</div>
+      <h2 class="section-title">Meet the Builders</h2>
+      <p class="section-subtitle">Passionate people dedicated to making your financial life better.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&auto=format&fit=crop&q=80" class="team-avatar" alt="Alex Chen" />
+          <div class="team-name">Alex Chen</div>
+          <div class="team-role">Co-Founder & CEO</div>
+          <p class="team-bio">Former Goldman Sachs analyst with a passion for democratizing personal finance tools.</p>
+          <div class="team-socials">
+            <a href="#" class="team-social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="team-social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&auto=format&fit=crop&q=80" class="team-avatar" alt="Maya Patel" />
+          <div class="team-name">Maya Patel</div>
+          <div class="team-role">Co-Founder & CTO</div>
+          <p class="team-bio">Full-stack engineer with 10+ years building fintech products at Stripe and PayPal.</p>
+          <div class="team-socials">
+            <a href="#" class="team-social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="team-social-link"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&auto=format&fit=crop&q=80" class="team-avatar" alt="James Rivera" />
+          <div class="team-name">James Rivera</div>
+          <div class="team-role">Head of Design</div>
+          <p class="team-bio">Award-winning UX designer obsessed with creating financial tools that people actually enjoy using.</p>
+          <div class="team-socials">
+            <a href="#" class="team-social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="team-social-link"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&auto=format&fit=crop&q=80" class="team-avatar" alt="Sarah Kim" />
+          <div class="team-name">Sarah Kim</div>
+          <div class="team-role">Head of Growth</div>
+          <p class="team-bio">Growth strategist who helped scale three fintech startups from 0 to 1 million users.</p>
+          <div class="team-socials">
+            <a href="#" class="team-social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="team-social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container position-relative" style="z-index:1;text-align:center">
+    <h2 class="cta-title">Join Our Growing Community</h2>
+    <p class="cta-subtitle">Start your journey to financial freedom today — it's free.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="dashboard.html" class="btn-primary-custom ripple" style="font-size:1.05rem;padding:14px 36px"><i class="bi bi-rocket-takeoff"></i> Get Started Free</a>
+      <a href="contact.html" class="btn-outline-custom" style="font-size:1.05rem;padding:14px 36px"><i class="bi bi-envelope"></i> Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (abbreviated) -->
+<footer class="footer" style="padding-top:50px">
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:0">
+      <p>© 2024 FinTrack. All rights reserved. · <a href="index.html" style="color:rgba(255,255,255,.4);text-decoration:none">Home</a> · <a href="contact.html" style="color:rgba(255,255,255,.4);text-decoration:none">Contact</a></p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gradient-primary);border:none;color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow-blue)"><i class="bi bi-arrow-up"></i></button>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal fade auth-modal" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <div class="auth-modal-header">
+      <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      <div class="auth-modal-logo"><div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div><span class="auth-modal-brand">Fin<span class="accent">Track</span></span></div>
+      <h2 class="auth-modal-title">Welcome Back 👋</h2>
+      <p class="auth-modal-subtitle">Sign in to your account to continue</p>
+    </div>
+    <div class="auth-modal-body">
+      <div class="auth-success login-success" style="display:none"><div class="auth-success-icon"><i class="bi bi-check-lg"></i></div><h5>You're in!</h5><p>Login successful. Redirecting to your dashboard…</p></div>
+      <div class="login-form-wrapper">
+        <button type="button" class="auth-social-btn mb-3" onclick="showToast('Google login coming soon!','info')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Continue with Google</button>
+        <div class="auth-divider"><span class="auth-divider-text">or sign in with email</span></div>
+        <form id="login-form" novalidate>
+          <div class="auth-form-group"><label class="auth-form-label" for="login-identifier">Email or Username</label><div class="auth-input-wrapper"><i class="bi bi-person auth-input-icon"></i><input type="text" id="login-identifier" class="auth-input" placeholder="you@example.com or username" /></div><div class="auth-feedback" id="login-identifier-fb"></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="login-password">Password</label><div class="auth-input-wrapper"><i class="bi bi-lock auth-input-icon"></i><input type="password" id="login-password" class="auth-input" placeholder="Enter your password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="auth-feedback" id="login-password-fb"></div></div>
+          <div class="auth-remember-row"><div class="auth-checkbox-group"><input type="checkbox" id="login-remember" class="auth-checkbox" /><label for="login-remember" class="auth-checkbox-label">Remember me for 30 days</label></div><div class="auth-forgot"><a href="#" onclick="showToast('Password reset email sent!','info');return false">Forgot password?</a></div></div>
+          <button type="submit" class="btn-auth-submit"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+        </form>
+        <div class="auth-footer-text">Don't have an account? <button class="auth-switch-link open-register-modal">Create Account →</button></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+<!-- ===== REGISTER MODAL ===== -->
+<div class="modal fade auth-modal register-modal" id="registerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
+    <div class="auth-modal-header">
+      <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      <div class="auth-modal-logo"><div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div><span class="auth-modal-brand">Fin<span class="accent">Track</span></span></div>
+      <h2 class="auth-modal-title">Create Your Account 🚀</h2>
+      <p class="auth-modal-subtitle">Join 10,000+ people achieving financial freedom</p>
+      <div class="auth-steps"><div class="auth-step-dot active"></div><div class="auth-step-dot"></div><div class="auth-step-dot"></div></div>
+    </div>
+    <div class="auth-modal-body">
+      <div class="auth-success register-success" style="display:none"><div class="auth-success-icon"><i class="bi bi-check-lg"></i></div><h5>Account Created! 🎉</h5><p>Welcome to FinTrack!</p><button class="btn-auth-submit" onclick="location.href='dashboard.html'" style="margin-top:16px"><i class="bi bi-speedometer2"></i> Go to Dashboard</button></div>
+      <div class="register-form-wrapper">
+        <form id="register-form" novalidate>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-fullname">Full Name</label><div class="auth-input-wrapper"><i class="bi bi-person auth-input-icon"></i><input type="text" id="reg-fullname" class="auth-input" placeholder="John Doe" /></div><div class="auth-feedback" id="reg-fullname-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-email">Email Address</label><div class="auth-input-wrapper"><i class="bi bi-envelope auth-input-icon"></i><input type="email" id="reg-email" class="auth-input" placeholder="you@example.com" /></div><div class="auth-feedback" id="reg-email-fb"></div></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="reg-username">Username</label><div class="auth-input-wrapper"><i class="bi bi-at auth-input-icon"></i><input type="text" id="reg-username" class="auth-input" placeholder="johnsmith_92" /></div><div class="auth-feedback" id="reg-username-fb"></div></div>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-password">Password</label><div class="auth-input-wrapper"><i class="bi bi-lock auth-input-icon"></i><input type="password" id="reg-password" class="auth-input" placeholder="Min 8 characters" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="password-strength-bar"><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div></div><div class="password-strength-label"></div><div class="auth-feedback" id="reg-password-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-confirm">Confirm Password</label><div class="auth-input-wrapper"><i class="bi bi-lock-fill auth-input-icon"></i><input type="password" id="reg-confirm" class="auth-input" placeholder="Re-enter password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="auth-feedback" id="reg-confirm-fb"></div></div></div>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-country">Country</label><div class="auth-input-wrapper"><i class="bi bi-globe auth-input-icon"></i><select id="reg-country" class="auth-input"><option value="">Select country…</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>India</option><option>Pakistan</option><option>UAE</option><option>Singapore</option><option>Other</option></select></div><div class="auth-feedback" id="reg-country-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-currency">Currency</label><div class="auth-input-wrapper"><i class="bi bi-currency-exchange auth-input-icon"></i><select id="reg-currency" class="auth-input"><option value="">Select currency…</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="INR">INR — Indian Rupee</option><option value="PKR">PKR — Pakistani Rupee</option><option value="AED">AED — UAE Dirham</option><option value="JPY">JPY — Japanese Yen</option></select></div><div class="auth-feedback" id="reg-currency-fb"></div></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="reg-income">Monthly Income <span class="optional">(optional)</span></label><div class="auth-input-wrapper"><i class="bi bi-cash-coin auth-input-icon"></i><input type="number" id="reg-income" class="auth-input" placeholder="e.g. 3500" /></div></div>
+          <div class="auth-form-group mb-0"><div class="auth-checkbox-group"><input type="checkbox" id="reg-terms" class="auth-checkbox" /><label for="reg-terms" class="auth-checkbox-label">I agree to the <a href="#" onclick="return false">Terms &amp; Conditions</a> and <a href="#" onclick="return false">Privacy Policy</a></label></div><div class="auth-feedback" id="reg-terms-fb" style="margin-top:6px"></div></div>
+          <button type="submit" class="btn-auth-submit mt-3"><i class="bi bi-person-plus-fill"></i> Create My Account</button>
+        </form>
+        <div class="auth-footer-text">Already have an account? <button class="auth-switch-link open-login-modal">Login →</button></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+

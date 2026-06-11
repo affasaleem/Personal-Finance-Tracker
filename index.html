@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FinTrack - Smart Personal Finance Tracker. Manage expenses, income, budgets, and savings goals with beautiful dashboards and real-time insights." />
+  <title>FinTrack | Smart Personal Finance Tracker</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+<!-- ========================================
+     PAGE LOADER
+     ======================================== -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">💰 FinTrack</div>
+    <p style="color:rgba(255,255,255,.4);font-size:.85rem;margin:0">Loading your financial dashboard...</p>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ========================================
+     NAVBAR
+     ======================================== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar" style="background:transparent">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon"><i class="bi bi-graph-up-arrow text-white"></i></div>
+      <span class="brand-name">Fin<span class="brand-accent">Track</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="expenses.html">Expenses</a></li>
+        <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions d-flex align-items-center gap-2">
+      <a href="dashboard.html" class="btn-nav-dashboard" aria-label="View Dashboard">
+        <span class="dash-dot"></span>
+        <i class="bi bi-speedometer2"></i> Dashboard
+      </a>
+        <button class="btn-nav-login" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Login">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </button>
+        <button class="btn-nav-register ripple" data-bs-toggle="modal" data-bs-target="#registerModal" aria-label="Create Account">
+          <i class="bi bi-person-plus-fill"></i> Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========================================
+     HERO SECTION
+     ======================================== -->
+<section class="hero-section" id="hero">
+  <div class="container position-relative" style="z-index:1">
+    <div class="row align-items-center g-5">
+      <!-- Hero Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="hero-tag">
+          <i class="bi bi-stars"></i>
+          <span>#1 Personal Finance App</span>
+        </div>
+        <h1 class="hero-title">
+          Take Full Control of<br>
+          Your <span class="gradient-text">Financial Future</span>
+        </h1>
+        <p class="hero-subtitle">
+          FinTrack empowers you to track every dollar, plan every budget, and achieve every financial goal — with beautiful dashboards that make money management effortless.
+        </p>
+        <div class="hero-buttons d-flex flex-wrap gap-3">
+          <a href="dashboard.html" class="btn-primary-custom ripple">
+            <i class="bi bi-rocket-takeoff"></i> Get Started Free
+          </a>
+          <a href="#features" class="btn-outline-custom">
+            <i class="bi bi-play-circle"></i> Explore Features
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-value">10K+</span>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-value">$5M+</span>
+            <div class="stat-label">Tracked Monthly</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-value">95%</span>
+            <div class="stat-label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Image -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&auto=format&fit=crop&q=80"
+            alt="Finance Dashboard Preview"
+            loading="lazy"
+          />
+          <!-- Floating Cards -->
+          <div class="hero-floating-card card-balance">
+            <div class="floating-icon green"><i class="bi bi-wallet2"></i></div>
+            <div>
+              <div class="floating-label">Total Balance</div>
+              <div class="floating-value">$24,850.00</div>
+            </div>
+          </div>
+          <div class="hero-floating-card card-expense">
+            <div class="floating-icon red"><i class="bi bi-arrow-down-circle"></i></div>
+            <div>
+              <div class="floating-label">Monthly Expense</div>
+              <div class="floating-value">$3,420.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FEATURES SECTION
+     ======================================== -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-lightning-charge-fill"></i> Key Features</div>
+      <h2 class="section-title">Everything You Need to<br>Master Your Finances</h2>
+      <p class="section-subtitle">Powerful tools designed to give you complete financial clarity and control.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Feature 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="feature-card">
+          <div class="feature-icon bg-blue-soft"><i class="bi bi-receipt-cutoff"></i></div>
+          <h3 class="feature-title">Expense Tracking</h3>
+          <p class="feature-desc">Log and categorize every expense instantly. Visualize spending patterns and identify where your money goes each month.</p>
+        </div>
+      </div>
+      <!-- Feature 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-card">
+          <div class="feature-icon bg-green-soft"><i class="bi bi-cash-stack"></i></div>
+          <h3 class="feature-title">Income Management</h3>
+          <p class="feature-desc">Track multiple income streams — salary, freelancing, investments, and more. Monitor growth over time with trend analysis.</p>
+        </div>
+      </div>
+      <!-- Feature 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="feature-card">
+          <div class="feature-icon bg-cyan-soft"><i class="bi bi-pie-chart-fill"></i></div>
+          <h3 class="feature-title">Budget Planning</h3>
+          <p class="feature-desc">Create smart budgets for each spending category. Get real-time alerts before you overspend and stay on track.</p>
+        </div>
+      </div>
+      <!-- Feature 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-card">
+          <div class="feature-icon bg-yellow-soft"><i class="bi bi-bullseye"></i></div>
+          <h3 class="feature-title">Savings Goals</h3>
+          <p class="feature-desc">Set and track personalized savings goals. Whether it's a vacation or emergency fund, visualize your progress daily.</p>
+        </div>
+      </div>
+      <!-- Feature 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="feature-card">
+          <div class="feature-icon bg-purple-soft"><i class="bi bi-file-earmark-bar-graph"></i></div>
+          <h3 class="feature-title">Financial Reports</h3>
+          <p class="feature-desc">Generate detailed financial reports with charts and summaries. Export to PDF and share with your accountant or advisor.</p>
+        </div>
+      </div>
+      <!-- Feature 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-card">
+          <div class="feature-icon bg-red-soft"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3 class="feature-title">Data Visualization</h3>
+          <p class="feature-desc">Interactive charts and beautiful graphs transform raw numbers into actionable financial insights you can understand at a glance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     INSIGHTS SECTION
+     ======================================== -->
+<section class="insights-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:var(--secondary-light)">
+        <i class="bi bi-bar-chart-line-fill"></i> Financial Insights
+      </div>
+      <h2 class="section-title" style="-webkit-text-fill-color:#fff;background:none;color:#fff">Your Money at a Glance</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6)">Real-time insights to keep your finances healthy and growing.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+        <div class="insight-card">
+          <div class="insight-icon bg-green-soft"><i class="bi bi-piggy-bank-fill" style="color:var(--accent)"></i></div>
+          <div class="insight-value">$2,430</div>
+          <div class="insight-label">Monthly Savings</div>
+          <span class="insight-trend trend-up"><i class="bi bi-arrow-up"></i> 18.5%</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="insight-card">
+          <div class="insight-icon bg-red-soft"><i class="bi bi-wallet-fill" style="color:var(--danger)"></i></div>
+          <div class="insight-value">$3,420</div>
+          <div class="insight-label">Monthly Expenses</div>
+          <span class="insight-trend trend-down"><i class="bi bi-arrow-down"></i> 5.2%</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+        <div class="insight-card">
+          <div class="insight-icon bg-blue-soft"><i class="bi bi-cash-coin" style="color:var(--primary-light)"></i></div>
+          <div class="insight-value">$6,200</div>
+          <div class="insight-label">Income Growth</div>
+          <span class="insight-trend trend-up"><i class="bi bi-arrow-up"></i> 12.3%</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="insight-card">
+          <div class="insight-icon bg-cyan-soft"><i class="bi bi-clipboard-data-fill" style="color:var(--secondary)"></i></div>
+          <div class="insight-value">87%</div>
+          <div class="insight-label">Budget Performance</div>
+          <span class="insight-trend trend-up"><i class="bi bi-arrow-up"></i> 3.7%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     STATISTICS SECTION
+     ======================================== -->
+<section class="stats-section">
+  <div class="container position-relative" style="z-index:1">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+        <div class="stat-card-light">
+          <span class="count-value" data-target="10" data-suffix="K+" data-decimals="0">0</span>
+          <div class="count-label">Active Users</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-card-light">
+          <span class="count-value" data-prefix="$" data-target="5" data-suffix="M+" data-decimals="0">0</span>
+          <div class="count-label">Tracked Expenses</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-card-light">
+          <span class="count-value" data-target="95" data-suffix="%" data-decimals="0">0</span>
+          <div class="count-label">User Satisfaction</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-card-light">
+          <span class="count-value" data-target="50" data-suffix="+" data-decimals="0">0</span>
+          <div class="count-label">Countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     HOW IT WORKS
+     ======================================== -->
+<section style="padding:var(--section-padding);background:var(--light-2)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-map"></i> How It Works</div>
+      <h2 class="section-title">Get Started in Minutes</h2>
+      <p class="section-subtitle">Three simple steps to transform your financial life.</p>
+    </div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&auto=format&fit=crop&q=80"
+             alt="Finance Planning" class="img-fluid rounded-custom shadow-lg" loading="lazy" />
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="d-flex gap-4 mb-4">
+          <div class="flex-shrink-0">
+            <div style="width:52px;height:52px;border-radius:var(--radius-md);background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800">1</div>
+          </div>
+          <div>
+            <h4 style="font-weight:700;margin-bottom:8px">Create Your Account</h4>
+            <p class="text-muted mb-0">Sign up for free in under 60 seconds. No credit card required. Connect your financial profile and start fresh.</p>
+          </div>
+        </div>
+        <div class="d-flex gap-4 mb-4">
+          <div class="flex-shrink-0">
+            <div style="width:52px;height:52px;border-radius:var(--radius-md);background:var(--gradient-accent);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800">2</div>
+          </div>
+          <div>
+            <h4 style="font-weight:700;margin-bottom:8px">Track Your Money</h4>
+            <p class="text-muted mb-0">Log income and expenses manually or import data. Set budgets for every category and watch your savings grow.</p>
+          </div>
+        </div>
+        <div class="d-flex gap-4">
+          <div class="flex-shrink-0">
+            <div style="width:52px;height:52px;border-radius:var(--radius-md);background:var(--gradient-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800">3</div>
+          </div>
+          <div>
+            <h4 style="font-weight:700;margin-bottom:8px">Achieve Your Goals</h4>
+            <p class="text-muted mb-0">Set financial goals, track progress with stunning visuals, and celebrate every milestone on your journey to financial freedom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     TESTIMONIALS — Swiper
+     ======================================== -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-chat-heart-fill"></i> Testimonials</div>
+      <h2 class="section-title">Loved by Thousands<br>of Smart Savers</h2>
+      <p class="section-subtitle">Real stories from people who transformed their finances with FinTrack.</p>
+    </div>
+
+    <!-- Swiper wrapper -->
+    <div class="testimonials-swiper-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"FinTrack completely changed how I manage money. I paid off $12,000 in debt in just 8 months using their budget planner. Absolutely incredible!"</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Alex Morrison" loading="lazy" />
+                <div>
+                  <div class="author-name">Alex Morrison</div>
+                  <div class="author-role">Software Engineer, San Francisco</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The expense tracking feature is a game-changer. I discovered I was spending $400/month on things I didn't even notice. Now I'm saving 35% more!"</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Sarah Kim" loading="lazy" />
+                <div>
+                  <div class="author-name">Sarah Kim</div>
+                  <div class="author-role">Marketing Director, New York</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"As a freelancer with multiple income streams, FinTrack is the only tool that keeps everything organized. The charts are beautiful and insightful!"</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Jordan Rivera" loading="lazy" />
+                <div>
+                  <div class="author-name">Jordan Rivera</div>
+                  <div class="author-role">Freelance Designer, Austin</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"I've tried every budgeting app out there. FinTrack is the first one I actually stuck with. The goals feature keeps me motivated every single day!"</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Priya Sharma" loading="lazy" />
+                <div>
+                  <div class="author-name">Priya Sharma</div>
+                  <div class="author-role">Product Manager, London</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"FinTrack's reports helped me realize I could retire 5 years earlier than planned. The financial clarity it gives you is absolutely priceless."</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Marcus Chen" loading="lazy" />
+                <div>
+                  <div class="author-name">Marcus Chen</div>
+                  <div class="author-role">Financial Analyst, Chicago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Running a small business and managing personal finances felt overwhelming. FinTrack made it simple. I saved over $8,000 in my first year using it!"</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&auto=format&fit=crop&q=80" class="author-avatar" alt="Lisa Okonkwo" loading="lazy" />
+                <div>
+                  <div class="author-name">Lisa Okonkwo</div>
+                  <div class="author-role">Small Business Owner, Lagos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /swiper-wrapper -->
+
+        <!-- Pagination dots -->
+        <div class="swiper-pagination testimonials-pagination"></div>
+      </div><!-- /swiper -->
+
+      <!-- Creative Nav Buttons -->
+      <div class="testimonials-nav">
+        <button class="t-nav-btn t-nav-prev" id="tPrev" aria-label="Previous testimonial">
+          <i class="bi bi-arrow-left"></i>
+          <span>Prev</span>
+        </button>
+        <div class="t-nav-counter">
+          <span id="tCurrent">1</span>
+          <span class="t-nav-sep"></span>
+          <span id="tTotal">6</span>
+        </div>
+        <button class="t-nav-btn t-nav-next" id="tNext" aria-label="Next testimonial">
+          <span>Next</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+
+    </div><!-- /testimonials-swiper-wrap -->
+  </div>
+</section>
+
+<!-- ========================================
+     PRICING
+     ======================================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-tag"><i class="bi bi-tags-fill"></i> Pricing Plans</div>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-subtitle">Start free, upgrade when you're ready. No hidden fees, no surprises.</p>
+      <!-- Toggle -->
+      <div class="d-inline-flex align-items-center gap-3 mt-2 p-2" style="background:#fff;border-radius:var(--radius-full);border:1px solid var(--light-3)">
+        <span style="font-size:.9rem;font-weight:600;color:var(--text-muted)">Monthly</span>
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input" type="checkbox" id="pricing-toggle" style="width:48px;height:24px;cursor:pointer">
+        </div>
+        <span style="font-size:.9rem;font-weight:600;color:var(--primary)">Yearly <span style="background:var(--accent);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:99px;margin-left:4px">-40%</span></span>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Free -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="pricing-card">
+          <div class="pricing-plan">Free</div>
+          <div class="price-monthly"><div class="pricing-price">$0<span class="pricing-period fs-6">/mo</span></div></div>
+          <div class="price-yearly" style="display:none"><div class="pricing-price">$0<span class="pricing-period fs-6">/yr</span></div></div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Track up to 50 transactions/mo</li>
+            <li><i class="bi bi-check-circle-fill"></i> 2 Budget categories</li>
+            <li><i class="bi bi-check-circle-fill"></i> Basic expense charts</li>
+            <li><i class="bi bi-check-circle-fill"></i> 1 Savings goal</li>
+            <li><i class="bi bi-x-circle-fill text-muted"></i> Export reports</li>
+            <li><i class="bi bi-x-circle-fill text-muted"></i> Priority support</li>
+          </ul>
+          <a href="dashboard.html" class="btn-outline-custom w-100 justify-content-center" style="color:var(--dark);border-color:var(--light-3)">Get Started Free</a>
+        </div>
+      </div>
+      <!-- Premium (Featured) -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card featured">
+          <div class="pricing-badge">⭐ Most Popular</div>
+          <div class="pricing-plan">Premium</div>
+          <div class="price-monthly"><div class="pricing-price">$9<span class="pricing-period fs-6">/mo</span></div></div>
+          <div class="price-yearly" style="display:none"><div class="pricing-price">$65<span class="pricing-period fs-6">/yr</span></div></div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Unlimited transactions</li>
+            <li><i class="bi bi-check-circle-fill"></i> All budget categories</li>
+            <li><i class="bi bi-check-circle-fill"></i> Advanced charts & insights</li>
+            <li><i class="bi bi-check-circle-fill"></i> 10 Savings goals</li>
+            <li><i class="bi bi-check-circle-fill"></i> Export PDF reports</li>
+            <li><i class="bi bi-x-circle-fill" style="opacity:.5"></i> Priority support</li>
+          </ul>
+          <a href="dashboard.html" class="btn-primary-custom w-100 justify-content-center ripple">Start Premium</a>
+        </div>
+      </div>
+      <!-- Pro -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card">
+          <div class="pricing-plan">Pro</div>
+          <div class="price-monthly"><div class="pricing-price">$19<span class="pricing-period fs-6">/mo</span></div></div>
+          <div class="price-yearly" style="display:none"><div class="pricing-price">$136<span class="pricing-period fs-6">/yr</span></div></div>
+          <hr class="pricing-divider">
+          <ul class="pricing-features">
+            <li><i class="bi bi-check-circle-fill"></i> Everything in Premium</li>
+            <li><i class="bi bi-check-circle-fill"></i> Family accounts (5 users)</li>
+            <li><i class="bi bi-check-circle-fill"></i> AI-powered insights</li>
+            <li><i class="bi bi-check-circle-fill"></i> Unlimited savings goals</li>
+            <li><i class="bi bi-check-circle-fill"></i> Custom report builder</li>
+            <li><i class="bi bi-check-circle-fill"></i> 24/7 Priority support</li>
+          </ul>
+          <a href="dashboard.html" class="btn-accent w-100 justify-content-center ripple">Go Pro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CTA SECTION
+     ======================================== -->
+<section class="cta-section">
+  <div class="container position-relative" style="z-index:1">
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="zoom-in">
+        <h2 class="cta-title">Ready to Transform<br>Your Financial Life?</h2>
+        <p class="cta-subtitle">Join 10,000+ people who have taken control of their finances with FinTrack.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="dashboard.html" class="btn-primary-custom ripple" style="font-size:1.05rem;padding:14px 36px">
+            <i class="bi bi-rocket-takeoff"></i> Start for Free Today
+          </a>
+          <a href="about.html" class="btn-outline-custom" style="font-size:1.05rem;padding:14px 36px">
+            <i class="bi bi-info-circle"></i> Learn More
+          </a>
+        </div>
+        <p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-top:20px">No credit card required · Cancel anytime · Free forever plan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Brand -->
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-brand p-0 mb-3 d-inline-flex">
+            <div class="brand-icon me-2"><i class="bi bi-graph-up-arrow text-white"></i></div>
+            <span style="font-size:1.4rem;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">FinTrack</span>
+          </a>
+        </div>
+        <p class="footer-desc">The smart personal finance tracker that helps you achieve financial freedom through data-driven insights and beautiful visualizations.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Product</h6>
+        <ul class="footer-links">
+          <li><a href="dashboard.html"><i class="bi bi-chevron-right"></i>Dashboard</a></li>
+          <li><a href="expenses.html"><i class="bi bi-chevron-right"></i>Expenses</a></li>
+          <li><a href="income.html"><i class="bi bi-chevron-right"></i>Income</a></li>
+          <li><a href="budget.html"><i class="bi bi-chevron-right"></i>Budget</a></li>
+          <li><a href="goals.html"><i class="bi bi-chevron-right"></i>Goals</a></li>
+          <li><a href="reports.html"><i class="bi bi-chevron-right"></i>Reports</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Company</h6>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="bi bi-chevron-right"></i>About Us</a></li>
+          <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+          <li><a href="#pricing"><i class="bi bi-chevron-right"></i>Pricing</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right"></i>Privacy Policy</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right"></i>Terms of Use</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div class="col-lg-4">
+        <h6 class="footer-heading">Stay Updated</h6>
+        <p style="color:rgba(255,255,255,.45);font-size:.9rem;margin-bottom:16px">Get weekly financial tips and product updates delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="your@email.com" required />
+          <button type="submit" class="newsletter-btn"><i class="bi bi-send"></i></button>
+        </form>
+        <div class="mt-3 d-flex align-items-center gap-2">
+          <i class="bi bi-shield-check" style="color:var(--accent)"></i>
+          <span style="color:rgba(255,255,255,.35);font-size:.8rem">No spam. Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 FinTrack. Crafted with <i class="bi bi-heart-fill" style="color:var(--danger)"></i> for financial freedom. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gradient-primary);border:none;color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow-blue);transition:all .3s ease" aria-label="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal fade auth-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="auth-modal-header">
+        <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        <div class="auth-modal-logo">
+          <div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div>
+          <span class="auth-modal-brand">Fin<span class="accent">Track</span></span>
+        </div>
+        <h2 class="auth-modal-title" id="loginModalLabel">Welcome Back 👋</h2>
+        <p class="auth-modal-subtitle">Sign in to your account to continue</p>
+      </div>
+      <div class="auth-modal-body">
+        <div class="auth-success login-success" style="display:none">
+          <div class="auth-success-icon"><i class="bi bi-check-lg"></i></div>
+          <h5>You're in!</h5>
+          <p>Login successful. Redirecting you to your dashboard…</p>
+        </div>
+        <div class="login-form-wrapper">
+          <div class="d-flex gap-2 mb-2">
+            <button type="button" class="auth-social-btn" onclick="showToast('Google login coming soon!','info')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Continue with Google
+            </button>
+          </div>
+          <div class="auth-divider"><span class="auth-divider-text">or sign in with email</span></div>
+          <form id="login-form" novalidate>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="login-identifier">Email or Username</label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-person auth-input-icon"></i>
+                <input type="text" id="login-identifier" class="auth-input" placeholder="you@example.com or username" autocomplete="username" />
+              </div>
+              <div class="auth-feedback" id="login-identifier-fb"></div>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="login-password">Password</label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-lock auth-input-icon"></i>
+                <input type="password" id="login-password" class="auth-input" placeholder="Enter your password" autocomplete="current-password" />
+                <button type="button" class="auth-input-icon-right bi bi-eye toggle-password" aria-label="Toggle password"></button>
+              </div>
+              <div class="auth-feedback" id="login-password-fb"></div>
+            </div>
+            <div class="auth-remember-row">
+              <div class="auth-checkbox-group">
+                <input type="checkbox" id="login-remember" class="auth-checkbox" />
+                <label for="login-remember" class="auth-checkbox-label">Remember me for 30 days</label>
+              </div>
+              <div class="auth-forgot"><a href="#" onclick="showToast('Password reset email sent!','info');return false">Forgot password?</a></div>
+            </div>
+            <button type="submit" class="btn-auth-submit"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+          </form>
+          <div class="auth-footer-text">Don't have an account? <button class="auth-switch-link open-register-modal">Create Account →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== REGISTER MODAL ===== -->
+<div class="modal fade auth-modal register-modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="auth-modal-header">
+        <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        <div class="auth-modal-logo">
+          <div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div>
+          <span class="auth-modal-brand">Fin<span class="accent">Track</span></span>
+        </div>
+        <h2 class="auth-modal-title" id="registerModalLabel">Create Your Account 🚀</h2>
+        <p class="auth-modal-subtitle">Join 10,000+ people achieving financial freedom</p>
+        <div class="auth-steps"><div class="auth-step-dot active"></div><div class="auth-step-dot"></div><div class="auth-step-dot"></div></div>
+      </div>
+      <div class="auth-modal-body">
+        <div class="auth-success register-success" style="display:none">
+          <div class="auth-success-icon"><i class="bi bi-check-lg"></i></div>
+          <h5>Account Created! 🎉</h5>
+          <p>Welcome to FinTrack! Your journey to financial freedom starts now.</p>
+          <button class="btn-auth-submit" onclick="location.href='dashboard.html'" style="margin-top:20px"><i class="bi bi-speedometer2"></i> Go to Dashboard</button>
+        </div>
+        <div class="register-form-wrapper">
+          <form id="register-form" novalidate>
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-fullname">Full Name</label>
+                <div class="auth-input-wrapper"><i class="bi bi-person auth-input-icon"></i><input type="text" id="reg-fullname" class="auth-input" placeholder="John Doe" autocomplete="name" /></div>
+                <div class="auth-feedback" id="reg-fullname-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-email">Email Address</label>
+                <div class="auth-input-wrapper"><i class="bi bi-envelope auth-input-icon"></i><input type="email" id="reg-email" class="auth-input" placeholder="you@example.com" autocomplete="email" /></div>
+                <div class="auth-feedback" id="reg-email-fb"></div>
+              </div>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="reg-username">Username</label>
+              <div class="auth-input-wrapper"><i class="bi bi-at auth-input-icon"></i><input type="text" id="reg-username" class="auth-input" placeholder="e.g. johnsmith_92" autocomplete="username" /></div>
+              <div class="auth-feedback" id="reg-username-fb"></div>
+            </div>
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-password">Password</label>
+                <div class="auth-input-wrapper"><i class="bi bi-lock auth-input-icon"></i><input type="password" id="reg-password" class="auth-input" placeholder="Min 8 characters" autocomplete="new-password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password" aria-label="Toggle"></button></div>
+                <div class="password-strength-bar"><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div></div>
+                <div class="password-strength-label"></div>
+                <div class="auth-feedback" id="reg-password-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-confirm">Confirm Password</label>
+                <div class="auth-input-wrapper"><i class="bi bi-lock-fill auth-input-icon"></i><input type="password" id="reg-confirm" class="auth-input" placeholder="Re-enter password" autocomplete="new-password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password" aria-label="Toggle"></button></div>
+                <div class="auth-feedback" id="reg-confirm-fb"></div>
+              </div>
+            </div>
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-country">Country</label>
+                <div class="auth-input-wrapper"><i class="bi bi-globe auth-input-icon"></i><select id="reg-country" class="auth-input"><option value="">Select country…</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>France</option><option>India</option><option>Pakistan</option><option>UAE</option><option>Singapore</option><option>Nigeria</option><option>South Africa</option><option>Brazil</option><option>Mexico</option><option>Japan</option><option>Other</option></select></div>
+                <div class="auth-feedback" id="reg-country-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-currency">Currency</label>
+                <div class="auth-input-wrapper"><i class="bi bi-currency-exchange auth-input-icon"></i><select id="reg-currency" class="auth-input"><option value="">Select currency…</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="INR">INR — Indian Rupee</option><option value="PKR">PKR — Pakistani Rupee</option><option value="AED">AED — UAE Dirham</option><option value="SGD">SGD — Singapore Dollar</option><option value="NGN">NGN — Nigerian Naira</option><option value="BRL">BRL — Brazilian Real</option><option value="JPY">JPY — Japanese Yen</option></select></div>
+                <div class="auth-feedback" id="reg-currency-fb"></div>
+              </div>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="reg-income">Monthly Income <span class="optional">(optional)</span></label>
+              <div class="auth-input-wrapper"><i class="bi bi-cash-coin auth-input-icon"></i><input type="number" id="reg-income" class="auth-input" placeholder="e.g. 3500" min="0" step="100" /></div>
+            </div>
+            <div class="auth-form-group mb-0">
+              <div class="auth-checkbox-group">
+                <input type="checkbox" id="reg-terms" class="auth-checkbox" />
+                <label for="reg-terms" class="auth-checkbox-label">I agree to the <a href="#" onclick="return false">Terms &amp; Conditions</a> and <a href="#" onclick="return false">Privacy Policy</a></label>
+              </div>
+              <div class="auth-feedback" id="reg-terms-fb" style="margin-top:6px"></div>
+            </div>
+            <button type="submit" class="btn-auth-submit mt-3"><i class="bi bi-person-plus-fill"></i> Create My Account</button>
+          </form>
+          <div class="auth-footer-text">Already have an account? <button class="auth-switch-link open-login-modal">Login →</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  // ---- Testimonials Swiper ----
+  (function() {
+    var swiper = new Swiper('.testimonials-swiper', {
+      loop: true,
+      speed: 600,
+      autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: { el: '.testimonials-pagination', clickable: true, dynamicBullets: true },
+      breakpoints: {
+        640:  { slidesPerView: 1 },
+        768:  { slidesPerView: 2, spaceBetween: 24 },
+        1024: { slidesPerView: 3, spaceBetween: 28 }
+      },
+      on: {
+        slideChange: function() {
+          var real = (this.realIndex + 1);
+          document.getElementById('tCurrent').textContent = real;
+        }
+      }
+    });
+    document.getElementById('tPrev').addEventListener('click', function() { swiper.slidePrev(); });
+    document.getElementById('tNext').addEventListener('click', function() { swiper.slideNext(); });
+    document.getElementById('tTotal').textContent = 6;
+  })();
+</script>
+</body>
+</html>
+
+
+

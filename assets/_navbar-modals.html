@@ -1,0 +1,376 @@
+<!--
+  FinTrack — Shared Navbar + Auth Modals
+  Include this block in every page.
+  ============================================
+  NAVBAR:  Replace existing <nav> with the block below
+  MODALS:  Place both modals just before </body>
+-->
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar" style="background:transparent">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon">
+        <i class="bi bi-graph-up-arrow text-white"></i>
+      </div>
+      <span class="brand-name">Fin<span class="brand-accent">Track</span></span>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links + Auth Buttons -->
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="expenses.html">Expenses</a></li>
+        <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions d-flex align-items-center gap-2">
+        <button class="btn-nav-login"
+                data-bs-toggle="modal" data-bs-target="#loginModal"
+                aria-label="Login">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </button>
+        <button class="btn-nav-register ripple"
+                data-bs-toggle="modal" data-bs-target="#registerModal"
+                aria-label="Create Account">
+          <i class="bi bi-person-plus-fill"></i> Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- ==================== /NAVBAR ==================== -->
+
+
+<!-- ===================== LOGIN MODAL ===================== -->
+<div class="modal fade auth-modal" id="loginModal" tabindex="-1"
+     aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="auth-modal-header">
+        <button class="auth-modal-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <a class="auth-modal-logo" href="index.html">
+          <div class="brand-icon" style="width:34px;height:34px;font-size:1rem">
+            <i class="bi bi-graph-up-arrow text-white"></i>
+          </div>
+          <span class="auth-modal-brand">Fin<span class="accent">Track</span></span>
+        </a>
+        <h2 class="auth-modal-title" id="loginModalLabel">Welcome Back 👋</h2>
+        <p class="auth-modal-subtitle">Sign in to your account to continue</p>
+      </div>
+
+      <!-- Body -->
+      <div class="auth-modal-body">
+
+        <!-- Login Success State (hidden by default) -->
+        <div class="auth-success login-success" style="display:none">
+          <div class="auth-success-icon"><i class="bi bi-check-lg"></i></div>
+          <h5>You're in!</h5>
+          <p>Login successful. Redirecting you to your dashboard…</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-wrapper">
+          <!-- Social login -->
+          <div class="d-flex gap-2 mb-2">
+            <button type="button" class="auth-social-btn" onclick="showToast('Google login coming soon!','info')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              Continue with Google
+            </button>
+          </div>
+
+          <div class="auth-divider"><span class="auth-divider-text">or sign in with email</span></div>
+
+          <form id="login-form" novalidate>
+            <!-- Email / Username -->
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="login-identifier">Email or Username</label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-person auth-input-icon"></i>
+                <input type="text" id="login-identifier" class="auth-input"
+                       placeholder="you@example.com or username"
+                       autocomplete="username" />
+              </div>
+              <div class="auth-feedback" id="login-identifier-fb"></div>
+            </div>
+
+            <!-- Password -->
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="login-password">Password</label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-lock auth-input-icon"></i>
+                <input type="password" id="login-password" class="auth-input"
+                       placeholder="Enter your password"
+                       autocomplete="current-password" />
+                <button type="button" class="auth-input-icon-right bi bi-eye toggle-password"
+                        aria-label="Show/hide password"></button>
+              </div>
+              <div class="auth-feedback" id="login-password-fb"></div>
+            </div>
+
+            <!-- Remember Me + Forgot -->
+            <div class="auth-remember-row">
+              <div class="auth-checkbox-group">
+                <input type="checkbox" id="login-remember" class="auth-checkbox" />
+                <label for="login-remember" class="auth-checkbox-label">Remember me for 30 days</label>
+              </div>
+              <div class="auth-forgot">
+                <a href="#" onclick="showToast('Password reset email sent!','info')">Forgot password?</a>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-auth-submit">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </button>
+          </form>
+
+          <!-- Switch to register -->
+          <div class="auth-footer-text">
+            Don't have an account?
+            <button class="auth-switch-link open-register-modal">Create Account →</button>
+          </div>
+        </div><!-- /login-form-wrapper -->
+
+      </div><!-- /auth-modal-body -->
+    </div>
+  </div>
+</div>
+<!-- ==================== /LOGIN MODAL ==================== -->
+
+
+<!-- ================ REGISTER MODAL ================ -->
+<div class="modal fade auth-modal register-modal" id="registerModal" tabindex="-1"
+     aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="auth-modal-header">
+        <button class="auth-modal-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <a class="auth-modal-logo" href="index.html">
+          <div class="brand-icon" style="width:34px;height:34px;font-size:1rem">
+            <i class="bi bi-graph-up-arrow text-white"></i>
+          </div>
+          <span class="auth-modal-brand">Fin<span class="accent">Track</span></span>
+        </a>
+        <h2 class="auth-modal-title" id="registerModalLabel">Create Your Account 🚀</h2>
+        <p class="auth-modal-subtitle">Join 10,000+ people achieving financial freedom</p>
+        <!-- Step dots -->
+        <div class="auth-steps">
+          <div class="auth-step-dot active"></div>
+          <div class="auth-step-dot"></div>
+          <div class="auth-step-dot"></div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="auth-modal-body">
+
+        <!-- Register Success State (hidden by default) -->
+        <div class="auth-success register-success" style="display:none">
+          <div class="auth-success-icon"><i class="bi bi-check-lg"></i></div>
+          <h5>Account Created! 🎉</h5>
+          <p>Welcome to FinTrack! Your journey to financial freedom starts now.</p>
+          <button class="btn-auth-submit mt-3" onclick="location.href='dashboard.html'"
+                  style="margin-top:20px">
+            <i class="bi bi-speedometer2"></i> Go to Dashboard
+          </button>
+        </div>
+
+        <!-- Register Form -->
+        <div class="register-form-wrapper">
+          <form id="register-form" novalidate>
+
+            <!-- Row 1: Full Name + Email -->
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-fullname">Full Name</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-person auth-input-icon"></i>
+                  <input type="text" id="reg-fullname" class="auth-input"
+                         placeholder="John Doe"
+                         autocomplete="name" />
+                </div>
+                <div class="auth-feedback" id="reg-fullname-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-email">Email Address</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-envelope auth-input-icon"></i>
+                  <input type="email" id="reg-email" class="auth-input"
+                         placeholder="you@example.com"
+                         autocomplete="email" />
+                </div>
+                <div class="auth-feedback" id="reg-email-fb"></div>
+              </div>
+            </div>
+
+            <!-- Username -->
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="reg-username">Username</label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-at auth-input-icon"></i>
+                <input type="text" id="reg-username" class="auth-input"
+                       placeholder="e.g. johnsmith_92"
+                       autocomplete="username" />
+              </div>
+              <div class="auth-feedback" id="reg-username-fb"></div>
+            </div>
+
+            <!-- Row 2: Password + Confirm -->
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-password">Password</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-lock auth-input-icon"></i>
+                  <input type="password" id="reg-password" class="auth-input"
+                         placeholder="Min 8 characters"
+                         autocomplete="new-password" />
+                  <button type="button" class="auth-input-icon-right bi bi-eye toggle-password"
+                          aria-label="Show password"></button>
+                </div>
+                <!-- Strength meter -->
+                <div class="password-strength-bar">
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                </div>
+                <div class="password-strength-label"></div>
+                <div class="auth-feedback" id="reg-password-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-confirm">Confirm Password</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-lock-fill auth-input-icon"></i>
+                  <input type="password" id="reg-confirm" class="auth-input"
+                         placeholder="Re-enter password"
+                         autocomplete="new-password" />
+                  <button type="button" class="auth-input-icon-right bi bi-eye toggle-password"
+                          aria-label="Show password"></button>
+                </div>
+                <div class="auth-feedback" id="reg-confirm-fb"></div>
+              </div>
+            </div>
+
+            <!-- Row 3: Country + Currency -->
+            <div class="auth-row">
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-country">Country</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-globe auth-input-icon"></i>
+                  <select id="reg-country" class="auth-input">
+                    <option value="">Select country…</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Canada</option>
+                    <option>Australia</option>
+                    <option>Germany</option>
+                    <option>France</option>
+                    <option>India</option>
+                    <option>Pakistan</option>
+                    <option>UAE</option>
+                    <option>Singapore</option>
+                    <option>Nigeria</option>
+                    <option>South Africa</option>
+                    <option>Brazil</option>
+                    <option>Mexico</option>
+                    <option>Japan</option>
+                    <option>China</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="auth-feedback" id="reg-country-fb"></div>
+              </div>
+              <div class="auth-form-group">
+                <label class="auth-form-label" for="reg-currency">Currency</label>
+                <div class="auth-input-wrapper">
+                  <i class="bi bi-currency-exchange auth-input-icon"></i>
+                  <select id="reg-currency" class="auth-input">
+                    <option value="">Select currency…</option>
+                    <option value="USD">USD — US Dollar</option>
+                    <option value="GBP">GBP — British Pound</option>
+                    <option value="EUR">EUR — Euro</option>
+                    <option value="CAD">CAD — Canadian Dollar</option>
+                    <option value="AUD">AUD — Australian Dollar</option>
+                    <option value="INR">INR — Indian Rupee</option>
+                    <option value="PKR">PKR — Pakistani Rupee</option>
+                    <option value="AED">AED — UAE Dirham</option>
+                    <option value="SGD">SGD — Singapore Dollar</option>
+                    <option value="NGN">NGN — Nigerian Naira</option>
+                    <option value="BRL">BRL — Brazilian Real</option>
+                    <option value="JPY">JPY — Japanese Yen</option>
+                  </select>
+                </div>
+                <div class="auth-feedback" id="reg-currency-fb"></div>
+              </div>
+            </div>
+
+            <!-- Monthly Income (optional) -->
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="reg-income">
+                Monthly Income <span class="optional">(optional)</span>
+              </label>
+              <div class="auth-input-wrapper">
+                <i class="bi bi-cash-coin auth-input-icon"></i>
+                <input type="number" id="reg-income" class="auth-input"
+                       placeholder="e.g. 3500"
+                       min="0" step="100" />
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="auth-form-group mb-0">
+              <div class="auth-checkbox-group">
+                <input type="checkbox" id="reg-terms" class="auth-checkbox" />
+                <label for="reg-terms" class="auth-checkbox-label">
+                  I agree to the <a href="#" onclick="return false">Terms & Conditions</a> and
+                  <a href="#" onclick="return false">Privacy Policy</a>
+                </label>
+              </div>
+              <div class="auth-feedback" id="reg-terms-fb" style="margin-top:6px"></div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-auth-submit mt-3">
+              <i class="bi bi-person-plus-fill"></i> Create My Account
+            </button>
+          </form>
+
+          <!-- Switch to login -->
+          <div class="auth-footer-text">
+            Already have an account?
+            <button class="auth-switch-link open-login-modal">Login →</button>
+          </div>
+        </div><!-- /register-form-wrapper -->
+
+      </div><!-- /auth-modal-body -->
+    </div>
+  </div>
+</div>
+<!-- ================ /REGISTER MODAL ================ -->
+

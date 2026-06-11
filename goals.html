@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Track your savings goals with FinTrack - from emergency funds to dream vacations." />
+  <title>Savings Goals | FinTrack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="dashboard-body">
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-brand">
+    <div class="brand-icon"><i class="bi bi-graph-up-arrow text-white"></i></div>
+    <span class="sidebar-brand-text">FinTrack</span>
+  </a>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Main Menu</div>
+    <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+    <a href="expenses.html"  class="sidebar-link"><i class="bi bi-receipt-cutoff"></i><span>Expenses</span></a>
+    <a href="income.html"    class="sidebar-link"><i class="bi bi-cash-stack"></i><span>Income</span></a>
+    <a href="budget.html"    class="sidebar-link"><i class="bi bi-pie-chart-fill"></i><span>Budget Planner</span></a>
+    <a href="goals.html"     class="sidebar-link active"><i class="bi bi-bullseye"></i><span>Savings Goals</span></a>
+    <a href="reports.html"   class="sidebar-link"><i class="bi bi-file-earmark-bar-graph"></i><span>Reports</span></a>
+    <div class="sidebar-section-label">Other</div>
+    <a href="about.html"   class="sidebar-link"><i class="bi bi-info-circle"></i><span>About</span></a>
+    <a href="contact.html" class="sidebar-link"><i class="bi bi-envelope"></i><span>Contact</span></a>
+    <a href="index.html"   class="sidebar-link"><i class="bi bi-house"></i><span>Home Page</span></a>
+  </nav>
+  <div class="sidebar-user">
+    <div class="sidebar-user-avatar">JD</div>
+    <div><div class="sidebar-user-name">John Doe</div><div class="sidebar-user-role">Premium Member</div></div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-content">
+  <div class="top-bar">
+    <div class="d-flex align-items-center gap-3">
+      <button id="sidebar-toggle" class="top-bar-icon d-lg-none border-0" style="background:var(--light-2)"><i class="bi bi-list fs-5 text-dark"></i></button>
+      <div class="top-bar-title">Savings Goals</div>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-icon"><i class="bi bi-bell"></i><span class="notification-dot"></span></a>
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700">JD</div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="page-header d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <h1 class="page-title">Savings Goals 🎯</h1>
+        <p class="page-subtitle">Set meaningful financial goals and celebrate every milestone.</p>
+      </div>
+      <button class="btn-primary-custom ripple" onclick="showToast('New goal created! Start saving today.','success')">
+        <i class="bi bi-plus-circle"></i> New Goal
+      </button>
+    </div>
+
+    <!-- Summary -->
+    <div class="row g-4 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(37,99,235,.1)"><i class="bi bi-bullseye" style="color:var(--primary)"></i></div>
+          <div class="stat-card-value">4</div>
+          <div class="stat-card-label">Active Goals</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(16,185,129,.1)"><i class="bi bi-piggy-bank" style="color:var(--accent)"></i></div>
+          <div class="stat-card-value">$11,850</div>
+          <div class="stat-card-label">Total Saved</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(6,182,212,.1)"><i class="bi bi-flag" style="color:var(--secondary)"></i></div>
+          <div class="stat-card-value">$27,500</div>
+          <div class="stat-card-label">Total Target</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(124,58,237,.1)"><i class="bi bi-trophy" style="color:#7C3AED"></i></div>
+          <div class="stat-card-value">43%</div>
+          <div class="stat-card-label">Overall Progress</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOAL CARDS -->
+    <div class="row g-4 mb-4">
+      <!-- Goal 1: New Laptop -->
+      <div class="col-md-6 col-xl-3">
+        <div class="goal-card goal-blue" data-target="1500" data-current="1200">
+          <div class="goal-icon">💻</div>
+          <div class="goal-title">New Laptop</div>
+          <div class="goal-amounts">Target: <strong>$1,500</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px">
+            <span>Saved: <strong class="goal-saved" style="color:var(--accent)">$1,200</strong></span>
+            <span class="goal-pct" style="font-weight:700;color:var(--primary)">80%</span>
+          </div>
+          <div class="progress-custom mb-2">
+            <div class="progress-fill progress-safe" data-width="80" style="width:0%"></div>
+          </div>
+          <div class="goal-remaining">$300 remaining</div>
+          <div style="font-size:.78rem;color:var(--text-muted);margin-top:4px">🗓 Target: March 2025</div>
+          <button class="btn-add-to-goal btn-primary-custom w-100 justify-content-center mt-3 ripple" style="font-size:.82rem;padding:9px">
+            <i class="bi bi-plus"></i> Add Funds
+          </button>
+        </div>
+      </div>
+
+      <!-- Goal 2: Emergency Fund -->
+      <div class="col-md-6 col-xl-3">
+        <div class="goal-card goal-green" data-target="10000" data-current="6500">
+          <div class="goal-icon">🛡️</div>
+          <div class="goal-title">Emergency Fund</div>
+          <div class="goal-amounts">Target: <strong>$10,000</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px">
+            <span>Saved: <strong class="goal-saved" style="color:var(--accent)">$6,500</strong></span>
+            <span class="goal-pct" style="font-weight:700;color:var(--primary)">65%</span>
+          </div>
+          <div class="progress-custom mb-2">
+            <div class="progress-fill progress-safe" data-width="65" style="width:0%"></div>
+          </div>
+          <div class="goal-remaining">$3,500 remaining</div>
+          <div style="font-size:.78rem;color:var(--text-muted);margin-top:4px">🗓 Target: December 2025</div>
+          <button class="btn-add-to-goal btn-primary-custom w-100 justify-content-center mt-3 ripple" style="font-size:.82rem;padding:9px">
+            <i class="bi bi-plus"></i> Add Funds
+          </button>
+        </div>
+      </div>
+
+      <!-- Goal 3: Vacation -->
+      <div class="col-md-6 col-xl-3">
+        <div class="goal-card goal-purple" data-target="3000" data-current="950">
+          <div class="goal-icon">✈️</div>
+          <div class="goal-title">Europe Vacation</div>
+          <div class="goal-amounts">Target: <strong>$3,000</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px">
+            <span>Saved: <strong class="goal-saved" style="color:var(--accent)">$950</strong></span>
+            <span class="goal-pct" style="font-weight:700;color:var(--primary)">32%</span>
+          </div>
+          <div class="progress-custom mb-2">
+            <div class="progress-fill progress-safe" data-width="32" style="width:0%"></div>
+          </div>
+          <div class="goal-remaining">$2,050 remaining</div>
+          <div style="font-size:.78rem;color:var(--text-muted);margin-top:4px">🗓 Target: June 2025</div>
+          <button class="btn-add-to-goal btn-primary-custom w-100 justify-content-center mt-3 ripple" style="font-size:.82rem;padding:9px">
+            <i class="bi bi-plus"></i> Add Funds
+          </button>
+        </div>
+      </div>
+
+      <!-- Goal 4: New Car -->
+      <div class="col-md-6 col-xl-3">
+        <div class="goal-card goal-warm" data-target="13000" data-current="3200">
+          <div class="goal-icon">🚗</div>
+          <div class="goal-title">New Car</div>
+          <div class="goal-amounts">Target: <strong>$13,000</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px">
+            <span>Saved: <strong class="goal-saved" style="color:var(--accent)">$3,200</strong></span>
+            <span class="goal-pct" style="font-weight:700;color:var(--primary)">25%</span>
+          </div>
+          <div class="progress-custom mb-2">
+            <div class="progress-fill progress-warning" data-width="25" style="width:0%"></div>
+          </div>
+          <div class="goal-remaining">$9,800 remaining</div>
+          <div style="font-size:.78rem;color:var(--text-muted);margin-top:4px">🗓 Target: December 2026</div>
+          <button class="btn-add-to-goal btn-primary-custom w-100 justify-content-center mt-3 ripple" style="font-size:.82rem;padding:9px">
+            <i class="bi bi-plus"></i> Add Funds
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Savings Image Section -->
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="form-card d-flex align-items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=200&h=200&auto=format&fit=crop&q=80"
+               alt="Savings Goal" style="width:140px;height:140px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy" />
+          <div>
+            <h5 style="font-weight:700;margin-bottom:8px">Achieve Every Dream 🌟</h5>
+            <p style="font-size:.88rem;color:var(--text-muted);line-height:1.8;margin:0">
+              Small, consistent contributions make big goals possible. Set up automatic monthly contributions to reach your targets faster.
+            </p>
+            <button class="btn-accent mt-3 ripple" style="font-size:.85rem;padding:9px 20px" onclick="showToast('Auto-save enabled! $200/month set aside.','success')">
+              <i class="bi bi-magic"></i> Enable Auto-Save
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-card">
+          <h6 style="font-weight:700;margin-bottom:16px">💡 Smart Saving Tips</h6>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3 align-items-start">
+              <div style="width:32px;height:32px;border-radius:var(--radius-sm);background:rgba(37,99,235,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem">1</div>
+              <div><strong style="font-size:.88rem">Pay Yourself First</strong><p style="font-size:.82rem;color:var(--text-muted);margin:2px 0 0">Transfer savings on payday before spending anything.</p></div>
+            </div>
+            <div class="d-flex gap-3 align-items-start">
+              <div style="width:32px;height:32px;border-radius:var(--radius-sm);background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem">2</div>
+              <div><strong style="font-size:.88rem">Round-Up Spare Change</strong><p style="font-size:.82rem;color:var(--text-muted);margin:2px 0 0">Round up each purchase and save the difference.</p></div>
+            </div>
+            <div class="d-flex gap-3 align-items-start">
+              <div style="width:32px;height:32px;border-radius:var(--radius-sm);background:rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem">3</div>
+              <div><strong style="font-size:.88rem">Celebrate Milestones</strong><p style="font-size:.82rem;color:var(--text-muted);margin:2px 0 0">Acknowledge every 25% progress to stay motivated.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+  document.getElementById('sidebar-toggle')?.addEventListener('click',function(){
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('show');
+  });
+  document.getElementById('sidebar-overlay').addEventListener('click',function(){
+    document.getElementById('sidebar').classList.remove('open');
+    this.classList.remove('show');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plan and manage budgets for every spending category with FinTrack's Budget Planner." />
+  <title>Budget Planner | FinTrack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="dashboard-body">
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-brand">
+    <div class="brand-icon"><i class="bi bi-graph-up-arrow text-white"></i></div>
+    <span class="sidebar-brand-text">FinTrack</span>
+  </a>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Main Menu</div>
+    <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+    <a href="expenses.html"  class="sidebar-link"><i class="bi bi-receipt-cutoff"></i><span>Expenses</span></a>
+    <a href="income.html"    class="sidebar-link"><i class="bi bi-cash-stack"></i><span>Income</span></a>
+    <a href="budget.html"    class="sidebar-link active"><i class="bi bi-pie-chart-fill"></i><span>Budget Planner</span></a>
+    <a href="goals.html"     class="sidebar-link"><i class="bi bi-bullseye"></i><span>Savings Goals</span></a>
+    <a href="reports.html"   class="sidebar-link"><i class="bi bi-file-earmark-bar-graph"></i><span>Reports</span></a>
+    <div class="sidebar-section-label">Other</div>
+    <a href="about.html"   class="sidebar-link"><i class="bi bi-info-circle"></i><span>About</span></a>
+    <a href="contact.html" class="sidebar-link"><i class="bi bi-envelope"></i><span>Contact</span></a>
+    <a href="index.html"   class="sidebar-link"><i class="bi bi-house"></i><span>Home Page</span></a>
+  </nav>
+  <div class="sidebar-user">
+    <div class="sidebar-user-avatar">JD</div>
+    <div><div class="sidebar-user-name">John Doe</div><div class="sidebar-user-role">Premium Member</div></div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-content">
+  <div class="top-bar">
+    <div class="d-flex align-items-center gap-3">
+      <button id="sidebar-toggle" class="top-bar-icon d-lg-none border-0" style="background:var(--light-2)"><i class="bi bi-list fs-5 text-dark"></i></button>
+      <div class="top-bar-title">Budget Planner</div>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-icon"><i class="bi bi-bell"></i><span class="notification-dot"></span></a>
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700">JD</div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="page-header d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <h1 class="page-title">Budget Planner 📊</h1>
+        <p class="page-subtitle">Set spending limits and track how well you're sticking to your budget.</p>
+      </div>
+      <div class="d-flex gap-2">
+        <span style="font-size:.85rem;color:var(--text-muted);align-self:center">December 2024</span>
+        <button class="btn-primary-custom ripple" style="font-size:.88rem;padding:9px 20px" onclick="showToast('New budget category added!','success')">
+          <i class="bi bi-plus-circle"></i> Add Category
+        </button>
+      </div>
+    </div>
+
+    <!-- Budget Overview Cards -->
+    <div class="row g-4 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(37,99,235,.1)"><i class="bi bi-clipboard-check" style="color:var(--primary)"></i></div>
+          <div class="stat-card-value">$3,350</div>
+          <div class="stat-card-label">Total Budget</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(16,185,129,.1)"><i class="bi bi-check-circle" style="color:var(--accent)"></i></div>
+          <div class="stat-card-value">$3,140</div>
+          <div class="stat-card-label">Total Spent</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(245,158,11,.1)"><i class="bi bi-wallet" style="color:var(--warning)"></i></div>
+          <div class="stat-card-value">$210</div>
+          <div class="stat-card-label">Remaining</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-card">
+          <div class="stat-card-icon" style="background:rgba(16,185,129,.1)"><i class="bi bi-percent" style="color:var(--accent)"></i></div>
+          <div class="stat-card-value">93.7%</div>
+          <div class="stat-card-label">Budget Used</div>
+          <span class="stat-card-change change-up"><i class="bi bi-check2"></i> On Track</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Budget Progress -->
+      <div class="col-lg-8">
+        <div class="form-card">
+          <h5 style="font-weight:700;margin-bottom:28px">Budget Allocation & Usage</h5>
+
+          <!-- Housing -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">🏠</span> Housing</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$1,500</strong> / $1,500</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-safe" data-width="100" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">100% used</span>
+              <span style="font-size:.75rem;color:var(--accent);font-weight:600">$0 left</span>
+            </div>
+          </div>
+
+          <!-- Food -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">🍕</span> Food & Dining</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$520</strong> / $600</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-safe" data-width="87" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">87% used</span>
+              <span style="font-size:.75rem;color:var(--accent);font-weight:600">$80 left</span>
+            </div>
+          </div>
+
+          <!-- Transport -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">🚗</span> Transportation</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$280</strong> / $300</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-warning" data-width="93" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">93% used</span>
+              <span style="font-size:.75rem;color:var(--warning);font-weight:600">$20 left ⚠️</span>
+            </div>
+          </div>
+
+          <!-- Savings -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">💰</span> Savings</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$420</strong> / $500</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-safe" data-width="84" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">84% achieved</span>
+              <span style="font-size:.75rem;color:var(--accent);font-weight:600">$80 to go</span>
+            </div>
+          </div>
+
+          <!-- Entertainment -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">🎬</span> Entertainment</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$190</strong> / $200</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-warning" data-width="95" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">95% used</span>
+              <span style="font-size:.75rem;color:var(--warning);font-weight:600">$10 left ⚠️</span>
+            </div>
+          </div>
+
+          <!-- Utilities -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">⚡</span> Utilities</div>
+              <div class="budget-amounts"><strong style="color:var(--dark)">$230</strong> / $250</div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-safe" data-width="92" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--text-muted)">92% used</span>
+              <span style="font-size:.75rem;color:var(--accent);font-weight:600">$20 left</span>
+            </div>
+          </div>
+
+          <!-- Health - OVER BUDGET -->
+          <div class="budget-progress-item">
+            <div class="budget-progress-header">
+              <div class="budget-category"><span style="font-size:1.2rem">💊</span> Health</div>
+              <div class="budget-amounts"><strong style="color:var(--danger)">$220</strong> / $180 <span style="color:var(--danger);font-size:.75rem">+$40 over!</span></div>
+            </div>
+            <div class="progress-custom"><div class="progress-fill progress-danger" data-width="100" style="width:0%"></div></div>
+            <div class="d-flex justify-content-between mt-1">
+              <span style="font-size:.75rem;color:var(--danger)">Over budget by $40 🔴</span>
+              <span style="font-size:.75rem;color:var(--danger);font-weight:600">Exceeded</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Budget Tips & Image -->
+      <div class="col-lg-4">
+        <div class="form-card mb-4">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&auto=format&fit=crop&q=80" alt="Budget Management" class="img-fluid rounded-custom mb-3" loading="lazy" />
+          <h6 style="font-weight:700;margin-bottom:12px">💡 Budget Tips</h6>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="font-size:.85rem;color:var(--text-body);padding:8px 0;border-bottom:1px solid var(--light-3);display:flex;gap:8px"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px"></i>Follow the 50/30/20 rule for budgeting</li>
+            <li style="font-size:.85rem;color:var(--text-body);padding:8px 0;border-bottom:1px solid var(--light-3);display:flex;gap:8px"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px"></i>Review your budget weekly</li>
+            <li style="font-size:.85rem;color:var(--text-body);padding:8px 0;border-bottom:1px solid var(--light-3);display:flex;gap:8px"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px"></i>Adjust categories as priorities change</li>
+            <li style="font-size:.85rem;color:var(--text-body);padding:8px 0;display:flex;gap:8px"><i class="bi bi-check-circle-fill" style="color:var(--accent);flex-shrink:0;margin-top:2px"></i>Always save before you spend</li>
+          </ul>
+        </div>
+
+        <!-- Budget Legend -->
+        <div class="form-card">
+          <h6 style="font-weight:700;margin-bottom:16px">Progress Legend</h6>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-3">
+              <div style="width:40px;height:8px;border-radius:99px;background:var(--gradient-accent);flex-shrink:0"></div>
+              <div>
+                <div style="font-size:.85rem;font-weight:600">Safe Zone</div>
+                <div style="font-size:.78rem;color:var(--text-muted)">Under 90% used</div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div style="width:40px;height:8px;border-radius:99px;background:linear-gradient(90deg,#F59E0B,#FBBF24);flex-shrink:0"></div>
+              <div>
+                <div style="font-size:.85rem;font-weight:600">Warning Zone</div>
+                <div style="font-size:.78rem;color:var(--text-muted)">90–99% used</div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <div style="width:40px;height:8px;border-radius:99px;background:linear-gradient(90deg,#EF4444,#F87171);flex-shrink:0"></div>
+              <div>
+                <div style="font-size:.85rem;font-weight:600">Over Budget</div>
+                <div style="font-size:.78rem;color:var(--text-muted)">100%+ used</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+  document.getElementById('sidebar-toggle')?.addEventListener('click',function(){
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('show');
+  });
+  document.getElementById('sidebar-overlay').addEventListener('click',function(){
+    document.getElementById('sidebar').classList.remove('open');
+    this.classList.remove('show');
+  });
+</script>
+</body>
+</html>

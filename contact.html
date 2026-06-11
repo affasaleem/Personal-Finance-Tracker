@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with the FinTrack team - we're here to help with any questions about our personal finance platform." />
+  <title>Contact Us | FinTrack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">💰 FinTrack</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar" style="background:transparent">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon"><i class="bi bi-graph-up-arrow text-white"></i></div>
+      <span class="brand-name">Fin<span class="brand-accent">Track</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContact"
+            aria-controls="navbarContact" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContact">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="expenses.html">Expenses</a></li>
+        <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-actions d-flex align-items-center gap-2">
+      <a href="dashboard.html" class="btn-nav-dashboard" aria-label="View Dashboard">
+        <span class="dash-dot"></span>
+        <i class="bi bi-speedometer2"></i> Dashboard
+      </a>
+        <button class="btn-nav-login" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Login">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </button>
+        <button class="btn-nav-register ripple" data-bs-toggle="modal" data-bs-target="#registerModal" aria-label="Create Account">
+          <i class="bi bi-person-plus-fill"></i> Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTACT HERO -->
+<section class="inner-hero" style="padding-bottom:80px">
+  <div class="container text-center">
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb justify-content-center" style="background:transparent">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Contact</li>
+      </ol>
+    </nav>
+    <div class="section-tag mx-auto mb-3" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8)"><i class="bi bi-envelope-heart-fill"></i> Get In Touch</div>
+    <h1 class="inner-hero-title mb-3">We'd Love to Hear<br><span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">From You</span></h1>
+    <p class="inner-hero-subtitle mx-auto" style="max-width:540px">Have a question, feedback, or partnership opportunity? Our team typically responds within 24 hours.</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO CARDS -->
+<section style="padding:50px 0;background:var(--light-2)">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="contact-info-card">
+          <div class="contact-icon" style="background:rgba(37,99,235,.1)"><i class="bi bi-envelope-fill" style="color:var(--primary)"></i></div>
+          <h6 style="font-weight:700;margin-bottom:8px">Email Us</h6>
+          <p style="font-size:.85rem;color:var(--text-muted);margin:0">hello@fintrack.io<br>support@fintrack.io</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-info-card">
+          <div class="contact-icon" style="background:rgba(16,185,129,.1)"><i class="bi bi-telephone-fill" style="color:var(--accent)"></i></div>
+          <h6 style="font-weight:700;margin-bottom:8px">Call Us</h6>
+          <p style="font-size:.85rem;color:var(--text-muted);margin:0">+1 (555) 012-3456<br>Mon–Fri, 9am–6pm EST</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-info-card">
+          <div class="contact-icon" style="background:rgba(6,182,212,.1)"><i class="bi bi-geo-alt-fill" style="color:var(--secondary)"></i></div>
+          <h6 style="font-weight:700;margin-bottom:8px">Visit Us</h6>
+          <p style="font-size:.85rem;color:var(--text-muted);margin:0">123 Finance Street<br>San Francisco, CA 94102</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="contact-info-card">
+          <div class="contact-icon" style="background:rgba(245,158,11,.1)"><i class="bi bi-clock-fill" style="color:var(--warning)"></i></div>
+          <h6 style="font-weight:700;margin-bottom:8px">Response Time</h6>
+          <p style="font-size:.85rem;color:var(--text-muted);margin:0">Average: <strong>&lt; 4 hours</strong><br>24/7 for Pro users</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM + MAP -->
+<section style="padding:80px 0">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="form-card">
+          <h4 style="font-weight:700;margin-bottom:8px">Send Us a Message</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:28px">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+          <form id="contact-form">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label-custom">Your Name *</label>
+                <input type="text" id="contact-name" class="form-control-custom" placeholder="John Doe" required />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-custom">Email Address *</label>
+                <input type="email" id="contact-email" class="form-control-custom" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="mt-3">
+              <label class="form-label-custom">Subject *</label>
+              <select id="contact-subject" class="form-control-custom" required>
+                <option value="">Select a subject...</option>
+                <option>General Inquiry</option>
+                <option>Technical Support</option>
+                <option>Billing & Payments</option>
+                <option>Partnership Opportunity</option>
+                <option>Feature Request</option>
+                <option>Bug Report</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mt-3">
+              <label class="form-label-custom">Message *</label>
+              <textarea id="contact-message" class="form-control-custom" rows="6" placeholder="Tell us how we can help you..." required style="resize:vertical"></textarea>
+            </div>
+
+            <div class="divider-custom mt-4">
+              <div class="divider-text">OR REACH US ON SOCIAL</div>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center mb-4">
+              <a href="#" class="social-link" style="background:rgba(29,161,242,.1);border-color:rgba(29,161,242,.2);color:#1DA1F2"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-link" style="background:rgba(0,119,181,.1);border-color:rgba(0,119,181,.2);color:#0077B5"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="social-link" style="background:rgba(24,119,242,.1);border-color:rgba(24,119,242,.2);color:#1877F2"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-link" style="background:rgba(225,48,108,.1);border-color:rgba(225,48,108,.2);color:#E1306C"><i class="bi bi-instagram"></i></a>
+            </div>
+
+            <button type="submit" class="btn-primary-custom ripple w-100 justify-content-center" style="font-size:1rem;padding:14px">
+              <i class="bi bi-send-fill"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map + FAQ -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <!-- Google Map Embed -->
+        <div class="contact-map mb-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1"
+            width="100%" height="280" style="border:0;display:block" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="FinTrack Office Location - San Francisco">
+          </iframe>
+        </div>
+
+        <!-- FAQ -->
+        <div class="form-card">
+          <h5 style="font-weight:700;margin-bottom:20px"><i class="bi bi-question-circle-fill me-2" style="color:var(--primary)"></i>Frequently Asked Questions</h5>
+
+          <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion-item" style="border:none;border-bottom:1px solid var(--light-3);padding:4px 0">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-size:.9rem;font-weight:600;background:transparent;color:var(--dark);padding:14px 0;box-shadow:none">
+                  Is FinTrack free to use?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="padding:0 0 16px;font-size:.88rem;color:var(--text-muted)">Yes! FinTrack has a generous free plan with no credit card required. Premium features are available for $9/month.</div>
+              </div>
+            </div>
+            <div class="accordion-item" style="border:none;border-bottom:1px solid var(--light-3);padding:4px 0">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-size:.9rem;font-weight:600;background:transparent;color:var(--dark);padding:14px 0;box-shadow:none">
+                  How secure is my financial data?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="padding:0 0 16px;font-size:.88rem;color:var(--text-muted)">We use 256-bit SSL encryption, bank-level security, and never sell your data. Your privacy is our top priority.</div>
+              </div>
+            </div>
+            <div class="accordion-item" style="border:none;padding:4px 0">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-size:.9rem;font-weight:600;background:transparent;color:var(--dark);padding:14px 0;box-shadow:none">
+                  Can I export my financial data?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="padding:0 0 16px;font-size:.88rem;color:var(--text-muted)">Premium and Pro users can export full financial reports as PDF or CSV at any time from the Reports page.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" style="padding-top:50px">
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:0">
+      <p>© 2024 FinTrack. All rights reserved. · <a href="index.html" style="color:rgba(255,255,255,.4);text-decoration:none">Home</a> · <a href="about.html" style="color:rgba(255,255,255,.4);text-decoration:none">About</a></p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gradient-primary);border:none;color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow-blue)"><i class="bi bi-arrow-up"></i></button>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal fade auth-modal" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <div class="auth-modal-header">
+      <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      <div class="auth-modal-logo"><div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div><span class="auth-modal-brand">Fin<span class="accent">Track</span></span></div>
+      <h2 class="auth-modal-title">Welcome Back 👋</h2>
+      <p class="auth-modal-subtitle">Sign in to your account to continue</p>
+    </div>
+    <div class="auth-modal-body">
+      <div class="auth-success login-success" style="display:none"><div class="auth-success-icon"><i class="bi bi-check-lg"></i></div><h5>You're in!</h5><p>Login successful. Redirecting to your dashboard…</p></div>
+      <div class="login-form-wrapper">
+        <button type="button" class="auth-social-btn mb-3" onclick="showToast('Google login coming soon!','info')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Continue with Google</button>
+        <div class="auth-divider"><span class="auth-divider-text">or sign in with email</span></div>
+        <form id="login-form" novalidate>
+          <div class="auth-form-group"><label class="auth-form-label" for="login-identifier">Email or Username</label><div class="auth-input-wrapper"><i class="bi bi-person auth-input-icon"></i><input type="text" id="login-identifier" class="auth-input" placeholder="you@example.com or username" /></div><div class="auth-feedback" id="login-identifier-fb"></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="login-password">Password</label><div class="auth-input-wrapper"><i class="bi bi-lock auth-input-icon"></i><input type="password" id="login-password" class="auth-input" placeholder="Enter your password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="auth-feedback" id="login-password-fb"></div></div>
+          <div class="auth-remember-row"><div class="auth-checkbox-group"><input type="checkbox" id="login-remember" class="auth-checkbox" /><label for="login-remember" class="auth-checkbox-label">Remember me for 30 days</label></div><div class="auth-forgot"><a href="#" onclick="showToast('Password reset email sent!','info');return false">Forgot password?</a></div></div>
+          <button type="submit" class="btn-auth-submit"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+        </form>
+        <div class="auth-footer-text">Don't have an account? <button class="auth-switch-link open-register-modal">Create Account →</button></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ===== REGISTER MODAL ===== -->
+<div class="modal fade auth-modal register-modal" id="registerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
+    <div class="auth-modal-header">
+      <button class="auth-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+      <div class="auth-modal-logo"><div class="brand-icon" style="width:34px;height:34px;font-size:1rem"><i class="bi bi-graph-up-arrow text-white"></i></div><span class="auth-modal-brand">Fin<span class="accent">Track</span></span></div>
+      <h2 class="auth-modal-title">Create Your Account 🚀</h2>
+      <p class="auth-modal-subtitle">Join 10,000+ people achieving financial freedom</p>
+      <div class="auth-steps"><div class="auth-step-dot active"></div><div class="auth-step-dot"></div><div class="auth-step-dot"></div></div>
+    </div>
+    <div class="auth-modal-body">
+      <div class="auth-success register-success" style="display:none"><div class="auth-success-icon"><i class="bi bi-check-lg"></i></div><h5>Account Created! 🎉</h5><p>Welcome to FinTrack!</p><button class="btn-auth-submit" onclick="location.href='dashboard.html'" style="margin-top:16px"><i class="bi bi-speedometer2"></i> Go to Dashboard</button></div>
+      <div class="register-form-wrapper">
+        <form id="register-form" novalidate>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-fullname">Full Name</label><div class="auth-input-wrapper"><i class="bi bi-person auth-input-icon"></i><input type="text" id="reg-fullname" class="auth-input" placeholder="John Doe" /></div><div class="auth-feedback" id="reg-fullname-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-email">Email Address</label><div class="auth-input-wrapper"><i class="bi bi-envelope auth-input-icon"></i><input type="email" id="reg-email" class="auth-input" placeholder="you@example.com" /></div><div class="auth-feedback" id="reg-email-fb"></div></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="reg-username">Username</label><div class="auth-input-wrapper"><i class="bi bi-at auth-input-icon"></i><input type="text" id="reg-username" class="auth-input" placeholder="johnsmith_92" /></div><div class="auth-feedback" id="reg-username-fb"></div></div>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-password">Password</label><div class="auth-input-wrapper"><i class="bi bi-lock auth-input-icon"></i><input type="password" id="reg-password" class="auth-input" placeholder="Min 8 characters" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="password-strength-bar"><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div><div class="strength-segment"></div></div><div class="password-strength-label"></div><div class="auth-feedback" id="reg-password-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-confirm">Confirm Password</label><div class="auth-input-wrapper"><i class="bi bi-lock-fill auth-input-icon"></i><input type="password" id="reg-confirm" class="auth-input" placeholder="Re-enter password" /><button type="button" class="auth-input-icon-right bi bi-eye toggle-password"></button></div><div class="auth-feedback" id="reg-confirm-fb"></div></div></div>
+          <div class="auth-row"><div class="auth-form-group"><label class="auth-form-label" for="reg-country">Country</label><div class="auth-input-wrapper"><i class="bi bi-globe auth-input-icon"></i><select id="reg-country" class="auth-input"><option value="">Select country…</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>India</option><option>Pakistan</option><option>UAE</option><option>Singapore</option><option>Other</option></select></div><div class="auth-feedback" id="reg-country-fb"></div></div><div class="auth-form-group"><label class="auth-form-label" for="reg-currency">Currency</label><div class="auth-input-wrapper"><i class="bi bi-currency-exchange auth-input-icon"></i><select id="reg-currency" class="auth-input"><option value="">Select currency…</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="INR">INR — Indian Rupee</option><option value="PKR">PKR — Pakistani Rupee</option><option value="AED">AED — UAE Dirham</option><option value="JPY">JPY — Japanese Yen</option></select></div><div class="auth-feedback" id="reg-currency-fb"></div></div></div>
+          <div class="auth-form-group"><label class="auth-form-label" for="reg-income">Monthly Income <span class="optional">(optional)</span></label><div class="auth-input-wrapper"><i class="bi bi-cash-coin auth-input-icon"></i><input type="number" id="reg-income" class="auth-input" placeholder="e.g. 3500" /></div></div>
+          <div class="auth-form-group mb-0"><div class="auth-checkbox-group"><input type="checkbox" id="reg-terms" class="auth-checkbox" /><label for="reg-terms" class="auth-checkbox-label">I agree to the <a href="#" onclick="return false">Terms &amp; Conditions</a> and <a href="#" onclick="return false">Privacy Policy</a></label></div><div class="auth-feedback" id="reg-terms-fb" style="margin-top:6px"></div></div>
+          <button type="submit" class="btn-auth-submit mt-3"><i class="bi bi-person-plus-fill"></i> Create My Account</button>
+        </form>
+        <div class="auth-footer-text">Already have an account? <button class="auth-switch-link open-login-modal">Login →</button></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/script.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+
+
+
