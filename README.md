@@ -1,169 +1,166 @@
-# 💰 FinTrack — Modern Personal Finance Tracker
+# 💰 FinTrack - Personal Finance Tracker
 
-A **premium, portfolio-worthy Personal Finance Tracker** web application built with **HTML5, CSS3, Bootstrap 5, JavaScript (ES6), and jQuery**. Designed to look and feel like a professional SaaS fintech product.
+A modern, responsive, and user-friendly **Personal Finance Tracker** built using **HTML, CSS, Bootstrap, JavaScript, and jQuery**. This project helps users manage their finances efficiently by tracking expenses, managing budgets, and visualizing financial data through an intuitive dashboard.
 
----
-
-## 🚀 Live Preview
-
-Open `index.html` in any modern browser to launch the app.
+Designed with a premium fintech-inspired UI, the application focuses on clean design, data visualization, and a seamless user experience across all devices.
 
 ---
 
-## 🗂️ Project Structure
+## 🚀 Live Demo
 
-```
+🔗 **Demo:** https://affasaleem.github.io/Personal-Finance-Tracker/
+
+---
+
+<!-- ## 📸 Preview
+
+Add screenshots or GIFs of your project here.
+
+--- -->
+
+## ✨ Features
+
+### 📊 Financial Dashboard
+- Overview of balance, expenses, budgets, and reports
+- Interactive financial summary cards
+- Quick financial insights
+
+### 💸 Expense Tracking
+- Add and manage expenses
+- Organize spending by categories
+- View transaction history
+
+### 📈 Budget Management
+- Create monthly budgets
+- Track spending progress
+- Budget usage indicators
+
+### 📋 Financial Reports
+- Expense analysis
+- Category-based spending reports
+- Interactive charts and visualizations
+
+### 🔐 Authentication UI
+- Create Account form
+- Login form
+- Modern user interface
+
+### 📱 Responsive Design
+- Mobile-friendly layout
+- Tablet and desktop optimized
+- Responsive navigation menu
+
+### 🎨 Modern UI/UX
+- Glassmorphism effects
+- Gradient buttons
+- Smooth animations
+- Professional fintech-inspired design
+
+---
+
+## 🛠️ Built With
+
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript (ES6)
+- jQuery
+- Chart.js
+- Bootstrap Icons
+- AOS Animation Library
+
+---
+
+## 🤖 AI-Assisted Development
+
+This project was developed with the assistance of:
+
+- Antigravity
+
+AI tools were used for brainstorming, UI/UX improvements, code optimization, and development support.
+
+---
+
+## 📂 Project Structure
+
+```text
 Personal-Finance-Tracker/
 │
-├── index.html          ← Home / Landing Page
-├── dashboard.html      ← Financial Dashboard
-├── expenses.html       ← Expense Management
-├── income.html         ← Income Tracking
-├── budget.html         ← Budget Planner
-├── goals.html          ← Savings Goals
-├── reports.html        ← Financial Reports
-├── about.html          ← About Us
-├── contact.html        ← Contact Page
+├── index.html
+├── dashboard.html
+├── expenses.html
+├── budget.html
+├── reports.html
+├── contact.html
 │
 ├── css/
-│   ├── style.css       ← Main design system & components
-│   └── responsive.css  ← Breakpoint-specific responsive styles
+│   ├── style.css
+│   └── responsive.css
 │
 ├── js/
-│   ├── script.js       ← Core JS (loader, navbar, counters, ripple, toasts)
-│   └── dashboard.js    ← Charts, CRUD logic, forms, goal tracking
+│   ├── script.js
+│   └── dashboard.js
+│
+├── assets/
+│   ├── images/
+│   └── icons/
 │
 └── README.md
 ```
 
 ---
 
-## 📄 Pages Overview
+## 🎯 Key Highlights
 
-| Page | Description |
-|------|-------------|
-| `index.html` | Hero, Features, Insights, Stats counter, Testimonials, Pricing, CTA, Footer |
-| `dashboard.html` | Full dashboard with 3 Chart.js charts, stat cards, transactions table |
-| `expenses.html` | Add/delete expenses, category filter, category breakdown sidebar |
-| `income.html` | Add/delete income, doughnut chart, trend line chart |
-| `budget.html` | Color-coded progress bars (safe/warning/danger), budget overview |
-| `goals.html` | 4 interactive goal cards with live "Add Funds" functionality |
-| `reports.html` | 4 Chart.js charts + key insights section + export button |
-| `about.html` | Story, Mission, Why Choose Us, Team cards |
-| `contact.html` | Contact form, Google Map, contact info cards, FAQ accordion |
+- Multi-page responsive website
+- Professional fintech dashboard design
+- Interactive charts and analytics
+- Modern glassmorphism UI
+- Mobile-first responsive layout
+- Portfolio-ready front-end project
+- Clean and organized code structure
 
 ---
 
-## 🎨 Design System
+## 💡 What I Learned
 
-### Color Palette
-| Name | Hex |
-|------|-----|
-| Primary | `#2563EB` |
-| Secondary | `#06B6D4` |
-| Accent | `#10B981` |
-| Dark | `#0F172A` |
-| Light | `#F8FAFC` |
-| Warning | `#F59E0B` |
-| Danger | `#EF4444` |
+Through this project, I strengthened my skills in:
 
-### Typography
-- **Headings**: Plus Jakarta Sans (Google Fonts)
-- **Body**: Inter (Google Fonts)
-
-### UI Effects
-- ✨ Glassmorphism navbar
-- 🌊 Smooth page loader with animated bar
-- 💫 Ripple button effects
-- 🎯 Floating hero cards with CSS animations
-- 📊 Animated counter numbers (Intersection Observer)
-- 🎨 Gradient text headings
-- 🌙 Dark sections with radial glow backgrounds
-- 🔄 AOS scroll-triggered animations
+- Responsive Web Design
+- Bootstrap Framework
+- JavaScript DOM Manipulation
+- jQuery Interactions
+- Dashboard UI Development
+- Financial Data Visualization
+- Front-End Project Structure
+- Modern UI/UX Design Principles
 
 ---
 
-## 📦 Technologies Used
+## 🌟 Future Improvements
 
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| Bootstrap | 5.3.3 | Grid, utilities, components |
-| Bootstrap Icons | 1.11.3 | Icon set throughout |
-| jQuery | 3.7.1 | DOM manipulation, CRUD logic |
-| Chart.js | 4.4.3 | Financial charts |
-| AOS | 2.3.4 | Scroll animations |
-| Google Fonts | – | Inter + Plus Jakarta Sans |
-| Unsplash Images | – | Hero & section images |
-
----
-
-## 📊 Charts Included (Chart.js)
-
-1. **Income vs Expense** — Grouped Bar Chart (Dashboard)
-2. **Monthly Spending Trend** — Line Chart with fill (Dashboard)
-3. **Expense by Category** — Doughnut Chart (Dashboard + Reports)
-4. **Income Source Distribution** — Doughnut Chart (Income page)
-5. **Income Monthly Trend** — Line Chart (Income page)
-6. **Income Analysis by Source** — Bar Chart (Reports)
-7. **Expense Pie Chart** — Pie Chart (Reports)
-8. **Cumulative Savings Growth** — Area Line Chart (Reports)
-9. **Budget vs Actual** — Grouped Bar Chart (Reports)
+- Local Storage Integration
+- Backend Authentication
+- Database Connectivity
+- PDF/Excel Export
+- Dark Mode
+- Financial Goal Tracking
+- Real-Time Analytics
+- Cloud Data Synchronization
 
 ---
 
-## ⚡ Interactive Features
+## 👨‍💻 Author
 
-- **Add/Delete Expenses** — Live table updates without page reload
-- **Add/Delete Income** — Same real-time CRUD behavior
-- **Budget Filters** — Filter expenses by Day/Week/Month/Year
-- **Goal Funding** — Click "Add Funds" to update progress bar live
-- **Pricing Toggle** — Switch between Monthly/Yearly pricing
-- **Counter Animations** — Numbers count up on scroll into view
-- **Toast Notifications** — Success/error/warning feedback
-- **Budget Progress Animation** — Progress bars animate on page load
-- **Contact Form** — Validated with loading spinner simulation
-- **Back to Top** — Appears after scrolling 400px
+**Affa Saleem**
+
+- GitHub: https://github.com/affasaleem
+- LinkedIn: https://www.linkedin.com/in/affasaleem/
 
 ---
 
-## 📱 Responsive Breakpoints
+## ⭐ Support
 
-| Breakpoint | Layout |
-|-----------|--------|
-| `< 576px` | Single column, stacked tables |
-| `576–767px` | 2 columns, collapsed navbar |
-| `768–991px` | Sidebar slides in on mobile |
-| `992–1199px` | Sidebar at 220px width |
-| `1200px+` | Full sidebar (260px) + main content |
+If you found this project useful, consider giving it a **⭐ Star** on GitHub.
 
 ---
-
-## 🔧 Getting Started
-
-1. Clone or download the project
-2. Open `index.html` in any modern browser
-3. No build step, server, or npm required
-4. Works 100% offline (CDN assets cached by browser)
-
----
-
-## 🌟 Portfolio Highlights
-
-- Clean semantic HTML5 structure
-- CSS custom properties (design tokens)
-- ES6+ JavaScript with jQuery
-- 9 fully responsive pages
-- 9 Chart.js visualizations
-- Accessible (focus-visible, ARIA labels, alt texts)
-- Print-friendly report styles
-- Touch-device optimized (hover states disabled on touch)
-
----
-
-## 📝 License
-
-MIT License — Free for personal and commercial use.
-
----
-
-**Built with ❤️ for financial freedom.**
