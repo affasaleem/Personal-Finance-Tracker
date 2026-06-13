@@ -372,13 +372,17 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 900;
   color: #fff;
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  margin-top: -1rem;
 }
 .hero-title .gradient-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.hero-buttons {
+  margin-top: -1.3rem;
 }
 .hero-subtitle {
   font-size: 1.15rem;
@@ -420,7 +424,8 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
+  margin-top: -1.3rem;
 }
 .hero-floating-card {
   position: absolute;
@@ -1315,31 +1320,6 @@ select.form-control-custom { cursor: pointer; }
   right: 16px;
 }
 
-/* ---- Login Button ---- */
-.btn-nav-login {
-  background: transparent;
-  color: rgba(255,255,255,.85);
-  border: 1.5px solid rgba(255,255,255,.35);
-  padding: 9px 22px;
-  border-radius: var(--radius-full);
-  font-size: .88rem;
-  font-weight: 600;
-  font-family: var(--font-primary);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  transition: all var(--transition-normal);
-  white-space: nowrap;
-  letter-spacing: .2px;
-  line-height: 1;
-}
-.btn-nav-login:hover {
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.7);
-  color: #fff;
-  transform: translateY(-1px);
-}
 
 /* ---- Create Account Button ---- */
 .btn-nav-register {
@@ -1825,7 +1805,6 @@ select.auth-input { cursor: pointer; }
     width: 100%;
     gap: 10px;
   }
-  .btn-nav-login,
   .btn-nav-register {
     justify-content: center;
     padding: 12px;
@@ -1848,7 +1827,8 @@ select.auth-input { cursor: pointer; }
   background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 55%, #10b981 100%);
   color: #fff;
   border: none;
-  padding: 8px 16px 8px 10px;
+  /* padding: 8px 16px 8px 10px; */
+  padding:10px 22px;
   border-radius: var(--radius-full);
   font-size: .82rem;
   font-weight: 700;
@@ -2050,4 +2030,42 @@ select.auth-input { cursor: pointer; }
   .t-nav-btn { padding: 12px 16px; border-radius: 50%; }
   .t-nav-btn i { font-size: 1.1rem; }
   .testimonials-nav { gap: 16px; }
+}
+
+/* ---- Modern UI Additions ---- */
+.modern-dropdown {
+  animation: dropdownFade .3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  backdrop-filter: blur(10px);
+}
+@keyframes dropdownFade {
+  0% { opacity: 0; transform: translateY(10px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.fs-7 { font-size: 0.9rem; }
+.fs-8 { font-size: 0.8rem; }
+.modern-dropdown .list-group-item {
+  transition: all 0.2s ease;
+  border-color: var(--light-3) !important;
+}
+.modern-dropdown .list-group-item:hover {
+  background: var(--light-2);
+  padding-left: 1.5rem !important;
+}
+.sidebar-user-dropdown {
+  margin-top: 10px;
+  background: var(--dark) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.sidebar-user-dropdown .dropdown-item {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+.sidebar-user-dropdown .dropdown-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  padding-left: 20px;
 }
